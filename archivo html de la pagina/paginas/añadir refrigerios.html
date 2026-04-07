@@ -6,16 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-      <header style="background-color: rgb(255, 204, 36);" id="#inicio">
-        <h1>Edu Food</h1>
-        <img src="../imagenes/plato-removebg-preview.png" alt="plato de comida">
-        <nav>
-            <ul>
-                <li><a href="./pagina principal.html">Inicio</a></li>
-                <li><a href="./acerca de nosotros.html">Sobre nosotros</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+                <h1>Edu Food</h1>
+        <img src="./imagenes/plato-removebg-preview.png" alt="plato de comida">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="./pagina principal.html">Inicio</a>
+                <a class="nav-link" href="./paginas/iniciodesesión.html">Iniciar sesión</a>
+                <a class="nav-link" href="./paginas/acerca de nosotros.html">Acerca de nosotros</a>
+            </div>
+        </div>
+    </div>
+</nav>
+</header>
 
     <p>A continuacion te pediremos la informacion necesaria para poder añadir un plato, completa toda la informacion y pulsa el boton enviar para añadir un plato</p>
 
