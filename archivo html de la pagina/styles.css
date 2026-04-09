@@ -67,3 +67,10 @@ body {
     bottom: 0;
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .titulo {
+         font-size: 25px;
+    }
+}
+
