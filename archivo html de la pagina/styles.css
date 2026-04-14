@@ -1,76 +1,87 @@
-
 body {
-    background-color: #e6e1d9;
+    margin: 0;
+    background-color: #eadcf0;
+    color: rgb(136, 101, 35);
     font-family: Arial, sans-serif;
 }
 
 
-.navbar {
-    background-color: #e6c46e;
-    padding: 15px;
+.custom-navbar {
+    background-color: #eadcf0;
 }
 
-.nav-link-custom {
-    margin-left: 20px;
+.brand-title {
+    color:rgb(218, 86, 38);
+    font-weight: bold;
+}
+
+.brand-subtitle {
+    color:rgb(148, 111, 42);
+}
+
+.nav-link {
+    color: #bea11c !important;
+}
+
+.nav-link:hover {
+    color: yellow !important;
+    text-decoration: underline;
+}
+
+.login-btn {
+    background-color: #fdff72;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+
+.hero-section {
+    padding: 60px 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color:rgb(184, 181, 24);
+}
+
+.hero-text {
+    max-width: 500px;
+    color: #cc9b30;
+}
+
+.hero-btn {
+    background-color: rgb(105, 77, 24);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+
+
+.info-section {
+    margin-top: 40px;
+}
+
+.info-card {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px
+}
+
+.info-card h3 {
+    color: rgb(99, 75, 11);
+}
+
+
+.footer-section {
+    background-color: #d9c5e6;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-link {
+    margin: 10px;
+    color: rgb(218, 214, 29);
     text-decoration: none;
-    color: #6b4f2c;
-    font-weight: bold;
 }
-
-
-.hero {
-    padding: 80px 20px;
-}
-
-
-.titulo {
-    font-size: 60px;
-    font-weight: bold;
-    color: #8b6b3f;
-}
-
-
-.linea {
-    width: 200px;
-    margin: 10px auto;
-    border: 2px solid #8b6b3f;
-}
-
-
-.descripcion {
-    max-width: 600px;
-    margin: auto;
-    font-size: 14px;
-    color: #000;
-}
-
-
-.img-left {
-    position: absolute;
-    left: 50px;
-    bottom: 50px;
-    width: 120px;
-}
-
-.img-right {
-    position: absolute;
-    right: 50px;
-    top: 50px;
-    width: 120px;
-}
-
-
-.footer {
-    background-color: #e6c46e;
-    padding: 15px 30px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .titulo {
-         font-size: 25px;
-    }
-}
-
