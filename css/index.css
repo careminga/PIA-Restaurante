@@ -2,18 +2,16 @@
     height: 50px;
 }
 
-footer{
-
-
+.bienvenida{
     text-align: center;
-    background-color: rgb(180, 130, 227);
-    color: white;
+    color: black;
+}
+
+footer{
+    text-align: center;
+    background-color: rgb(180, 130, 227);;
 }
 
 .body{
     background-color: rgb(224, 214, 233);
-}
-
-.titulo{
-    text-align: right;
 }
