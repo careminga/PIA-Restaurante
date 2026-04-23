@@ -1,11 +1,27 @@
 .adnamain {
-    color:hwb(271 34% 39%)
+    color:hwb(271 1% 76%)
 }
 
-.secadna { 
-    color:hwb(271 34% 39%)
+.acercade { 
+    color:hwb(271 1% 76%)
 }
 
 .tituloadna {
     font-family: Arial, sans-serif;
+}
+
+.navbar{
+    height: 50px;
+}
+
+footer{
+
+
+    text-align: center;
+    background-color: rgb(180, 130, 227);
+    color: white;
+}
+
+.body{
+    background-color: rgb(224, 214, 233);
 }
