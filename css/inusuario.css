@@ -27,6 +27,24 @@ object-fit: cover;
     text-align: center;
 }
 
+.carr{
+    max-width: 600px;
+    margin: 0 auto;
+    border: 5px solid #2f0243; 
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+
+
+.carr .carousel-item img{
+height: 400px;
+object-fit: cover;
+}
+
+.section1{
+    text-align: center;
+}
+
 
 
 

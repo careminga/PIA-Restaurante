@@ -1,20 +1,4 @@
-.adnamain {
-    color:hwb(271 1% 76%)
-}
-
-.acercade { 
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color:hwb(271 1% 76%)
-
-    
-}
-
-.tituloadna {
-    font-family: Arial, sans-serif;
-}
-
-.navbar{
+nav{
     height: 50px;
 }
 
@@ -40,4 +24,8 @@ footer p{
 
 main{
     flex: 1;
+}
+
+.titulo{
+    text-align: right;
 }

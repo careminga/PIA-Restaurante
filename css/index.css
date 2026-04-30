@@ -1,17 +1,142 @@
-.navbar{
-    height: 50px;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.bienvenida{
+/* Estilo general */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f5f2;
+    color: #333;
+}
+
+/* NAVBAR */
+header {
+    background-color: #512b58;
+    padding: 10px 10px;
+}
+
+header h1 {
+    color: #050a0a;
+    font-size: 1.8rem;
+    display: inline-block;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.container-fluid{
+    background-color: #b799c5;
+}
+
+.nav-link {
+    color: #9156ac;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #2c23aa;
+}
+
+/* BIENVENIDA */
+.bienvenida {
+    margin: 50px auto;
+    width: 85%;
+    max-width: 900px;
+    background-color: #9b7e9c;
+    padding: 50px;
+    border-radius: 10px;
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-top: 8px solid #8b3c92;
+    
+}
+
+.bienvenida h2 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.bienvenida p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* EFECTO SUTIL */
+.bienvenida:hover {
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+
+/* FOOTER */
+footer {
+    background-color: #5e1d6e;
     color: black;
-}
-
-footer{
     text-align: center;
-    background-color: rgb(180, 130, 227);;
+    padding: 20px;
+    margin-top: 40px;
 }
 
-.body{
-    background-color: rgb(224, 214, 233);
+footer a {
+    color: #d9ff00;
+    text-decoration: none;
+    font-weight: bold;
 }
+
+/* HR */
+hr {
+    border: none;
+    height: 2px;
+    background-color: #8b0000;
+    opacity: 0.2;
+    margin: 20px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .navbar-nav {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .bienvenida {
+        padding: 30px;
+    }
+
+    .bienvenida h2 {
+        font-size: 2rem;
+    }
+}
+
+main{
+    flex: 1;
+}
+
+.carr{
+    max-width: 600px;
+    margin: 0 auto;
+    border: 5px solid #2f0243; 
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+
+
+.carr .carousel-item img{
+height: 400px;
+object-fit: cover;
+}
+
+

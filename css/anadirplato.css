@@ -1,0 +1,77 @@
+/* Fondo general */
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #d8cfe4, #8e5cc7);
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 60px;
+    background: rgba(255,255,255,0.2);
+}
+
+.navbar ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+/* Centrar contenido */
+.contenedor{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:90vh;
+}
+
+/* Tarjeta formulario */
+.card-formulario{
+    background:white;
+    width:600px;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Títulos */
+.card-formulario h1{
+    text-align:center;
+}
+
+.card-formulario p{
+    text-align:center;
+    color:gray;
+}
+
+/* Inputs */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+/* Botón */
+button{
+    margin-top:15px;
+    padding:10px;
+    border:none;
+    background:#8e5cc7;
+    color:white;
+    border-radius:8px;
+}
