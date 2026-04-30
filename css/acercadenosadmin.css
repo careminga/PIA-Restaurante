@@ -3,7 +3,11 @@
 }
 
 .acercade { 
+    text-align: center;
+    font-family: Arial, sans-serif;
     color:hwb(271 1% 76%)
+
+    
 }
 
 .tituloadna {

@@ -1,0 +1,31 @@
+.bodypgadm{
+    background-color: rgb(224, 214, 233);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+
+
+.platospgadm{ 
+    text-align: center;
+    font-family: 'Arial Narrow';
+    color:hwb(271 1% 76%);
+}
+
+footer{
+    text-align: center;
+    margin-top: auto;
+    background-color: rgb(180, 130, 227);
+    color: white;
+    padding: 10px 30px;
+}
+
+.carr{
+    max-width: 600px;
+    margin: 0 auto;
+    border: 5px solid #2f0243; 
+    border-radius: 15px; 
+    overflow: hidden; 
+}
