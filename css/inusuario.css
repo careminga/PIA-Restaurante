@@ -1,47 +1,46 @@
-
-.baddy{
+.baddy {
     background-color: rgb(224, 214, 233);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
+
 }
 
 
 
-.carr{
+.carr {
     max-width: 600px;
     margin: 0 auto;
-    border: 5px solid #2f0243; 
-    border-radius: 15px; 
-    overflow: hidden; 
+    border: 5px solid #2f0243;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 
-.carr .carousel-item img{
-height: 400px;
-object-fit: cover;
+.carr .carousel-item img {
+    height: 400px;
+    object-fit: cover;
 }
 
-.section1{
+.section1 {
     text-align: center;
 }
 
-.carr{
+.carr {
     max-width: 600px;
     margin: 0 auto;
-    border: 5px solid #2f0243; 
-    border-radius: 15px; 
-    overflow: hidden; 
+    border: 5px solid #2f0243;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 
-.carr .carousel-item img{
-height: 400px;
-object-fit: cover;
+.carr .carousel-item img {
+    height: 400px;
+    object-fit: cover;
 }
 
-.section1{
+.section1 {
     text-align: center;
 }
 
@@ -52,7 +51,7 @@ object-fit: cover;
 
 
 
-footer{
+footer {
     text-align: center;
     margin-top: auto;
     background-color: rgb(180, 130, 227);

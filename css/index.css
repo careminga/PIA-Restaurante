@@ -28,7 +28,7 @@ header h1 {
     float: right;
 }
 
-.container-fluid{
+.container-fluid {
     background-color: #b799c5;
 }
 
@@ -53,9 +53,9 @@ header h1 {
     padding: 50px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-top: 8px solid #8b3c92;
-    
+
 }
 
 .bienvenida h2 {
@@ -121,22 +121,20 @@ hr {
     }
 }
 
-main{
+main {
     flex: 1;
 }
 
-.carr{
+.carr {
     max-width: 600px;
     margin: 0 auto;
-    border: 5px solid #2f0243; 
-    border-radius: 15px; 
-    overflow: hidden; 
+    border: 5px solid #2f0243;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 
-.carr .carousel-item img{
-height: 400px;
-object-fit: cover;
+.carr .carousel-item img {
+    height: 400px;
+    object-fit: cover;
 }
-
-

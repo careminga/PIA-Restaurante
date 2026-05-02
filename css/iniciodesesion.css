@@ -47,7 +47,7 @@ h1 {
 }
 
 
-body > h1 {
+body>h1 {
     text-align: center;
     margin-top: 40px;
     font-size: 2.2rem;
@@ -62,7 +62,7 @@ form {
     background-color: #cac4c4;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-top: 8px solid #704385;
 }
 
@@ -141,7 +141,7 @@ footer a {
         padding: 25px;
     }
 
-    body > h1 {
+    body>h1 {
         font-size: 1.8rem;
     }
 }
