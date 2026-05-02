@@ -1,11 +1,9 @@
-
-
-.bodyinad{
+.bodyinad {
     background-color: rgb(224, 214, 233);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
+
 }
 
 
@@ -15,27 +13,27 @@
     height: 40px;
 }
 
-.links-navinad{
+.links-navinad {
     margin-left: auto;
     text-decoration: none;
-    display: flex;          
-    justify-content: flex-end; 
-    gap: 20px;              
-    padding: 10px 20px; 
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 20px;
 }
 
-.bienvenidoinad{ 
+.bienvenidoinad {
     text-align: center;
     color: black;
 }
 
-.texto1inad{ 
+.texto1inad {
     text-align: center;
     font-family: 'Arial Narrow';
-    color:hwb(271 1% 76%);
+    color: hwb(271 1% 76%);
 }
 
-footer{
+footer {
     text-align: center;
     margin-top: auto;
     background-color: rgb(180, 130, 227);
@@ -43,16 +41,16 @@ footer{
     padding: 10px 30px;
 }
 
-.carr{
+.carr {
     max-width: 600px;
     margin: 0 auto;
-    border: 5px solid #2f0243; 
-    border-radius: 15px; 
-    overflow: hidden; 
+    border: 5px solid #2f0243;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 
-.carr .carousel-item img{
-height: 400px;
-object-fit: cover;
+.carr .carousel-item img {
+    height: 400px;
+    object-fit: cover;
 }

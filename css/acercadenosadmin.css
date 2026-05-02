@@ -1,24 +1,22 @@
 .adnamain {
-    color:hwb(271 1% 76%)
+    color: hwb(271 1% 76%)
 }
 
-.acercade { 
+.acercade {
     text-align: center;
     font-family: Arial, sans-serif;
-    color:hwb(271 1% 76%)
-
-    
+    color: hwb(271 1% 76%)
 }
 
 .tituloadna {
     font-family: Arial, sans-serif;
 }
 
-.navbar{
+.navbar {
     height: 50px;
 }
 
-footer{
+footer {
 
     text-align: center;
     background-color: rgb(180, 130, 227);
@@ -26,11 +24,11 @@ footer{
     padding: 10px 30px;
 }
 
-footer p{
+footer p {
     margin: 0;
 }
 
-.body{
+.body {
     background-color: rgb(224, 214, 233);
     display: flex;
     flex-direction: column;
@@ -38,6 +36,6 @@ footer p{
     margin: 0;
 }
 
-main{
+main {
     flex: 1;
 }
