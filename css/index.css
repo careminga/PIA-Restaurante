@@ -1,18 +1,18 @@
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo general */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f8f5f2;
     color: #333;
 }
 
-/* NAVBAR */
+
 header {
     background-color: #512b58;
     padding: 10px 10px;
@@ -44,7 +44,7 @@ header h1 {
     color: #2c23aa;
 }
 
-/* BIENVENIDA */
+
 .bienvenida {
     margin: 50px auto;
     width: 85%;
@@ -69,13 +69,13 @@ header h1 {
     line-height: 1.6;
 }
 
-/* EFECTO SUTIL */
+
 .bienvenida:hover {
     transform: scale(1.01);
     transition: 0.3s;
 }
 
-/* FOOTER */
+
 footer {
     background-color: #5e1d6e;
     color: black;
@@ -90,7 +90,7 @@ footer a {
     font-weight: bold;
 }
 
-/* HR */
+
 hr {
     border: none;
     height: 2px;
@@ -99,7 +99,7 @@ hr {
     margin: 20px 0;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
     .navbar-nav {
         float: none;
