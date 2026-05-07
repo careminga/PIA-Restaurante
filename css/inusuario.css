@@ -6,6 +6,41 @@
 
 }
 
+.navbar{
+
+    background-color: #343a40;
+    color: white;
+}
+
+
+.links_navbar {
+    margin-left: auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+
+.Bienvenida {
+    margin: 50px auto;
+    width: 85%;
+    max-width: 900px;
+    background-color: #9b7e9c;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #8b3c92;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Bienvenida:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
 
 
 .carr {
@@ -24,6 +59,7 @@
 
 .section1 {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .carr {
@@ -43,18 +79,16 @@
 .section1 {
     text-align: center;
 }
-
-
-
-
-
-
 
 
 footer {
     text-align: center;
     margin-top: auto;
-    background-color: rgb(180, 130, 227);
+    background-color: #343a40;
     color: white;
     padding: 10px 30px;
+}
+
+footer a{
+    color: white;
 }
