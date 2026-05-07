@@ -1,48 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Administrador | Refrigerio Escolar</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/anadirrefrigerio.css">
+
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-                <h1>Edu Food</h1>
-        <img src="../imagenes/plato-removebg-preview.png" alt="plato de comida">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+  <div class="container-fluid py-4">
+
+    <div class="main-container">
+
+      <nav class="navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#">
+            <i class="bi bi-cup-straw"></i>
+            Refrigerio administrador
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+          >
+
             <span class="navbar-toggler-icon"></span>
-        </button>       <button type="button" class="btn btn-primary"></button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="../pagina principal.html">Inicio</a>
-                <a class="nav-link" href="./paginadeplatosadmin.html">Modificar platos</a>
-                <a class="nav-link" href="./acercadenosotrosadmin.html">Acerca de nosotros</a>
+
+          </button>
+
+          <div class="collapse navbar-collapse" id="menu">
+
+           
+
+          </div>
+
+        </div>
+
+      </nav>
+
+      <div class="row mt-5 g-4">
+
+        <div class="col-lg-7">
+
+          <div class="featured-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000&auto=format&fit=crop"
+              alt="Refrigerio escolar"
+              class="featured-img"
+            >
+
+            <h1 class="featured-title">
+              Combo Escolar Saludable
+            </h1>
+
+            <div class="info-box">
+
+              <span>🥪 Proteína</span>
+              <span>🥤 Bebida</span>
+              <span>🍎 Fruta</span>
+
             </div>
+
+            <p class="featured-text">
+
+              Refrigerio preparado especialmente para estudiantes,
+              con ingredientes saludables y balanceados para la jornada escolar.
+
+            </p>
+
+            <div class="button-section">
+
+              <button class="btn-action btn-edit">
+                <i class="bi bi-pencil-square"></i>
+                Editar
+              </button>
+
+              <button class="btn-action btn-delete">
+                <i class="bi bi-trash"></i>
+                Eliminar
+              </button>
+
+            </div>
+
+          </div>
+
         </div>
+
+        <div class="col-lg-5">
+
+          <div class="row g-4">
+
+            <div class="col-sm-6">
+
+              <div class="product-card">
+
+
+                <img
+                  src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop"
+                  alt="Mini burger"
+                >
+
+                <h5>
+                  Mini Burger
+                </h5>
+
+                <p>
+                  Refrigerio ideal para descansos escolares.
+                </p>
+
+                <div class="card-buttons">
+
+                  <button class="icon-btn">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+
+                  <button class="icon-btn delete-btn">
+                    <i class="bi bi-trash"></i>
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+              <div class="product-card">
+
+                <img
+                  src="https://images.unsplash.com/photo-1520072959219-c595dc870360?q=80&w=800&auto=format&fit=crop"
+                  alt="Sandwich"
+                >
+
+                <h5>
+                  Sandwich Fit
+                </h5>
+
+                <p>
+                  Preparado con ingredientes frescos.
+                </p>
+
+                <div class="card-buttons">
+
+                  <button class="icon-btn">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+
+                  <button class="icon-btn delete-btn">
+                    <i class="bi bi-trash"></i>
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+              <div class="product-card">
+
+                <img
+                  src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=800&auto=format&fit=crop"
+                  alt="Snack"
+                >
+
+                <h5>
+                  Snack Escolar
+                </h5>
+
+                <p>
+                  Incluye fruta, yogurt y cereal nutritivo.
+                </p>
+
+                <div class="card-buttons">
+
+                  <button class="icon-btn">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+
+                  <button class="icon-btn delete-btn">
+                    <i class="bi bi-trash"></i>
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+              <div class="product-card">
+
+                <img
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop"
+                  alt="Wrap"
+                >
+
+                <h5>
+                  Wrap Escolar
+                </h5>
+
+                <p>
+                  Opción ligera y saludable para estudiantes.
+                </p>
+
+                <div class="card-buttons">
+
+                  <button class="icon-btn">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+
+                  <button class="icon-btn delete-btn">
+                    <i class="bi bi-trash"></i>
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-</nav>
-</header>
 
-        <section style="text-align: center;">
-        <h2>Refrigerios</h2>
-    </section>
+  </div>
 
-    <footer>
-        <div>
-            <p>&copy; Derechos reservados a los creadores de la página. <br>
-            Más información en <a href="./acercadenosotrosadmin.html">Sobre nosotros</a></p>
-        </div>
-    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
