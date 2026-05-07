@@ -1,140 +1,79 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Variables */
+:root {
+    --light-purple: #f3e5f5;
+    --main-purple: #7e57c2;
+    --gris-grafito: #343a40;
+    --white: #ffffff;
 }
 
-
+/* 1. Body Light Purple */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f8f5f2;
-    color: #333;
+    background-color: var(--light-purple);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
-
-header {
-    background-color: #512b58;
-    padding: 10px 10px;
+/* 2. Navbar Gris Grafito y Letras Blancas */
+header.n-escolar-dark {
+    background-color: var(--gris-grafito);
+    padding: 0.8rem 0;
 }
 
-header h1 {
-    color: #050a0a;
-    font-size: 1.8rem;
-    display: inline-block;
-}
-
-.navbar-nav {
-    float: right;
-}
-
-.container-fluid {
-    background-color: #b799c5;
-}
-
-.nav-link {
-    color: #9156ac;
+/* SELECTOR CLAVE: Este selector le gana al negro de Bootstrap */
+header.n-escolar-dark .navbar-nav .nav-link.item-nav {
+    color: var(--white);
+    font-weight: 500;
+    opacity: 0.85; /* Un poco suave por defecto */
     margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+header.n-escolar-dark .navbar-nav .nav-link.item-nav:hover,
+header.n-escolar-dark .navbar-nav .nav-link.item-nav.active {
+    color: var(--white);
+    opacity: 1; /* Brilla al pasar el mouse */
+    text-decoration: underline; /* Opcional: para saber dónde estás */
+}
+
+/* Marca en Blanco */
+header.n-escolar-dark .brand-edu {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.6rem;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
-.nav-link:hover {
-    color: #2c23aa;
-}
-
-
-.bienvenida {
-    margin: 50px auto;
-    width: 85%;
-    max-width: 900px;
-    background-color: #9b7e9c;
-    padding: 50px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-top: 8px solid #8b3c92;
-
-}
-
-.bienvenida h2 {
-    font-size: 2.5rem;
-    color: #000000;
-    margin-bottom: 20px;
-}
-
-.bienvenida p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-
-.bienvenida:hover {
-    transform: scale(1.01);
-    transition: 0.3s;
-}
-
-
-footer {
-    background-color: #5e1d6e;
-    color: black;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-footer a {
-    color: #d9ff00;
+/* 3. Botón Iniciar Sesión (Morado que cambia a Blanco) */
+.btn-login-edu {
+    background-color: var(--main-purple);
+    color: var(--white);
+    border: 2px solid var(--main-purple);
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
     text-decoration: none;
-    font-weight: bold;
 }
 
-
-hr {
-    border: none;
-    height: 2px;
-    background-color: #8b0000;
-    opacity: 0.2;
-    margin: 20px 0;
+.btn-login-edu:hover {
+    background-color: var(--white);
+    color: var(--main-purple);
+    border-color: var(--white);
 }
 
-
-@media (max-width: 768px) {
-    .navbar-nav {
-        float: none;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .nav-link {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .bienvenida {
-        padding: 30px;
-    }
-
-    .bienvenida h2 {
-        font-size: 2rem;
-    }
+/* 4. Footer Gris Grafito con letras blancas */
+footer.f-escolar-dark {
+    background-color: var(--gris-grafito);
+    color: var(--white);
+    border-top: 5px solid var(--main-purple);
 }
 
-main {
-    flex: 1;
-}
-
-.carr {
-    max-width: 600px;
-    margin: 0 auto;
-    border: 5px solid #2f0243;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-
-.carr .carousel-item img {
-    height: 400px;
+/* 5. Carrusel de Plato Circular */
+.plate-img {
+    width: 480px;
+    height: 480px;
     object-fit: cover;
+    border-radius: 50%;
+    border: 15px solid var(--white);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
