@@ -3,92 +3,111 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
+    margin: 0;
 }
 
-.navbar{
-
+.navbar {
     background-color: #343a40;
-    color: white;
 }
-
 
 .links_navbar {
-    margin-left: auto;
-    text-decoration: none;
     display: flex;
-    justify-content: flex-end;
     gap: 20px;
     padding: 10px 20px;
 }
 
+.contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 50px 5%;
+    flex: 1;
+}
 
 .Bienvenida {
-    margin: 50px auto;
-    width: 85%;
-    max-width: 900px;
+    flex: 1;
+    min-width: 320px;
+    max-width: 550px;
     background-color: #9b7e9c;
-    padding: 50px;
-    border-radius: 10px;
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-top: 8px solid #8b3c92;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .Bienvenida:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
 }
 
+.linea-decorativa {
+    width: 50px;
+    height: 3px;
+    background-color: #2f0243;
+    margin: 15px auto;
+    border: none;
+    opacity: 1;
+}
 
+.lista-beneficios {
+    text-align: left;
+    display: inline-block;
+    margin: 20px 0;
+    line-height: 1.8;
+    color: black;
+}
+
+.section1 {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+}
 
 .carr {
-    max-width: 600px;
-    margin: 0 auto;
+    height: 100%;
     border: 5px solid #2f0243;
     border-radius: 15px;
     overflow: hidden;
 }
 
+.carr .carousel-inner {
+    height: 100%;
+}
 
 .carr .carousel-item img {
-    height: 400px;
+    height: 480px;
     object-fit: cover;
 }
-
-.section1 {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.carr {
-    max-width: 600px;
-    margin: 0 auto;
-    border: 5px solid #2f0243;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-
-.carr .carousel-item img {
-    height: 400px;
-    object-fit: cover;
-}
-
-.section1 {
-    text-align: center;
-}
-
 
 footer {
     text-align: center;
-    margin-top: auto;
     background-color: #343a40;
     color: white;
-    padding: 10px 30px;
+    padding: 15px 30px;
 }
 
-footer a{
-    color: white;
+footer a {
+    color: #d1b3ff;
+}
+
+@media (max-width: 850px) {
+    .contenido-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .Bienvenida, .section1 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carr .carousel-item img {
+        height: 350px;
+    }
 }
