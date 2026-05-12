@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/paginadeplatosadmin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Gestión de Servicio Diario - Edu Food</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/paginadeplatosadmin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style-admin.css">
+    
 </head>
+<body class="bg-light-purple">
 
-<body class="bodypgadm">
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  
+    <header class="n-admin shadow-sm">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <h1>Edu Food</h1>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-                    crossorigin="anonymous"></script>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <h1 class = "edufod">Edu Food</h1>
+                
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav ms-auto">
                         <a class="nav-link active" aria-current="page" href="./inadministrador.html">Inicio</a>
                         <a class="nav-link" href="./refrigerioadmin.html">Modificar refrigerios</a>
                         <a class="nav-link" href="./acercadenosotrosadmin.html">Acerca de nosotros</a>
@@ -34,17 +36,87 @@
         </nav>
     </header>
 
-    <section class="platospgadm">
-        <h2>Platos</h2>
-        <button><a href="./añadir plato.html">añadir plato</a></button>
-    </section>
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-grafito mb-2">¿Qué hay de almuerzo hoy?</h2>
+            <p class="text-muted">Configura las opciones disponibles en la barra de servicio para los estudiantes.</p>
+            <div class="d-inline-block px-4 py-2 bg-white rounded-pill shadow-sm text-purple fw-600">
+                <i class="bi bi-calendar3 me-2"></i> Martes, 12 de Mayo
+            </div>
+        </div>
 
-    <footer>
-        <div style="text-align: center;">
-            <p>&copy; Derechos reservados a los creadores de la página. <br>
-                Más información en <a href="./acercadenosotrosadmin.html">Sobre nosotros</a></p>
+  
+        <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-menu-admin border-0 shadow-sm h-100">
+                    <div class="card-header bg-grafito text-white py-3 border-0">
+                        <h5 class="mb-0"><i class="bi bi-egg-fried me-2"></i>Proteínas</h5>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <ul class="list-unstyled mb-4">
+                            <li class="py-2 border-bottom">Pollo sudado en salsa</li>
+                            <li class="py-2 border-bottom">Carne asada a la plancha</li>
+                            <li class="py-2 text-muted small italic">Opción Veg: Tortilla de garbanzo</li>
+                        </ul>
+                        <button class="btn btn-modify-section w-100">
+                            <i class="bi bi-pencil-square me-2"></i>Modificar Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-menu-admin border-0 shadow-sm h-100">
+                    <div class="card-header bg-grafito text-white py-3 border-0">
+                        <h5 class="mb-0"><i class="bi bi-bowl-repro me-2"></i>Principios</h5>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <ul class="list-unstyled mb-4">
+                            <li class="py-2 border-bottom">Arroz blanco esponjoso</li>
+                            <li class="py-2 border-bottom">Lentejas guisadas</li>
+                            <li class="py-2">Tajadas de plátano maduro</li>
+                        </ul>
+                        <button class="btn btn-modify-section w-100">
+                            <i class="bi bi-pencil-square me-2"></i>Modificar Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-menu-admin border-0 shadow-sm h-100">
+                    <div class="card-header bg-grafito text-white py-3 border-0">
+                        <h5 class="mb-0"><i class="bi bi-cup-straw me-2"></i>Complementos</h5>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <ul class="list-unstyled mb-4">
+                            <li class="py-2 border-bottom">Ensalada de repollo y zanahoria</li>
+                            <li class="py-2 border-bottom">Jugo de Mora natural</li>
+                            <li class="py-2">Fruta: Banano</li>
+                        </ul>
+                        <button class="btn btn-modify-section w-100">
+                            <i class="bi bi-pencil-square me-2"></i>Modificar Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <button class="btn btn-purple px-5 py-3 shadow">
+                <i class="bi bi-megaphone-fill me-2"></i>Modificar Menú a Estudiantes
+            </button>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-0 text-secondary small">&copy; Derechos reservados a los creadores de la página. <br>
+                Más información en <a href="./acercadenosotros.html" class="fw-bold text-purple-link">Sobre nosotros</a></p>
         </div>
     </footer>
 </body>
-
 </html>
