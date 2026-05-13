@@ -4,8 +4,6 @@ body{
     color: #333;
 }
 
-/* NAVBAR */
-
 .navbar-custom{
     background-color: #765185;
     padding: 15px;
@@ -29,8 +27,6 @@ body{
     color: #d8c3ff !important;
 }
 
-/* CAJA INFORMACIÓN */
-
 .info-box{
     background: white;
     padding: 40px;
@@ -50,8 +46,6 @@ body{
     color: #5c4188;
 }
 
-/* CAJA CREADORES */
-
 .creadores-box{
     background: white;
     padding: 40px;
@@ -62,8 +56,6 @@ body{
 .creadores-box:hover{
     transform: translateY(-8px);
 }
-
-/* TARJETAS */
 
 .card-creador{
     border: none;
@@ -81,8 +73,6 @@ body{
     object-fit: cover;
 }
 
-/* FOOTER */
-
 .footer-custom{
     background-color: #5c4188;
     color: white;
@@ -90,8 +80,6 @@ body{
     padding: 20px;
     margin-top: 50px;
 }
-
-/* RESPONSIVE */
 
 @media(max-width:992px){
 
