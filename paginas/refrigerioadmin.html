@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PAE Refrigerio Escolar</title>
+  <title>Edu Food</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous">
+    rel="stylesheet">
 
   <link rel="stylesheet" href="../css/refrigerioadmin.css">
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-
-  <header>
+   <header >
   <nav class="navbar navbar-expand-lg n-escolar-dark">
 
     <div class="container">
@@ -39,17 +39,10 @@
 
         <div class="navbar-nav align-items-center">
 
-          <a class="nav-link item-nav active" href="#">
+          <a class="nav-link item-nav active" href="../index.html">
             Inicio
           </a>
 
-          <a class="nav-link item-nav" href="#">
-            Acerca de nosotros
-          </a>
-
-          <a class="btn-login-edu" href="#">
-            Iniciar sesión
-          </a>
 
         </div>
       </div>
@@ -58,113 +51,157 @@
   </nav>
 </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Refrigerios Nutritivos y Deliciosos</h2>
-      <button class="btn btn-primary">
-        Ver Menú
-      </button>
-    </div>
-  </section>
+  <div class="main-container" style="background-color: #f3e5f5;">
 
-  <section class="container py-5">
+    <nav class="navbar navbar-expand-lg">
 
-    <div class="section-title text-center mb-5">
-      <h2>Nuestros Refrigerios</h2>
-    </div>
+      <div class="container-fluid">
 
-    <div class="row g-4">
+        <button class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu">
 
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop"
-            class="card-img-top"
-            alt="Frutas frescas">
+        <div class="collapse navbar-collapse justify-content-center" id="menu">
 
-          <div class="card-body">
-            <h3 class="card-title h5">Frutas Frescas</h3>
-            <p class="card-text">
-              Frutas saludables y naturales todos los días.
+          </div>
+
+
+    </nav>
+
+    <div class="container-fluid mt-4" style="background-color: #f3e5f5;">
+
+      <div class="row g-4">
+
+        <div class="col-lg-6">
+
+          <div class="main-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
+              class="main-image"
+              alt="Refrigerio">
+
+            <h1>
+              Refrigerio Saludable
+            </h1>
+
+            <p>
+              Energía y bienestar en cada refrigerio
             </p>
+
+            <button class="btn-menu">
+              Ver menú escolar
+            </button>
+
           </div>
 
         </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+        <div class="col-lg-6">
 
-          <img
-            src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop"
-            class="card-img-top"
-            alt="Sandwich">
+          <div class="row g-4">
 
-          <div class="card-body">
-            <h3 class="card-title h5">Sandwich Nutritivo</h3>
-            <p class="card-text">
-              Preparado con ingredientes frescos y balanceados.
-            </p>
+            <div class="col-md-6">
+
+              <div class="food-card">
+
+                <img
+                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
+                  alt="Ensalada">
+
+                <h5>Ensalada Fresca</h5>
+
+                <p>
+                  Rica en vitaminas y minerales.
+                </p>
+
+                <button>
+                  Ver
+                </button>
+
+              </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <div class="food-card">
+
+                <img
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop"
+                  alt="Frutas">
+
+                <h5>Frutas Mixtas</h5>
+
+                <p>
+                  Frutas naturales seleccionadas.
+                </p>
+
+                <button>
+                  Ver
+                </button>
+
+              </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <div class="food-card">
+
+                <img
+                  src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop"
+                  alt="Sandwich">
+
+                <h5>Sandwich Escolar</h5>
+
+                <p>
+                  Preparado diariamente.
+                </p>
+
+                <button>
+                  Ver
+                </button>
+
+              </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <div class="food-card">
+
+                <img
+                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop"
+                  alt="Nutrición">
+
+                <h5>Menú Nutritivo</h5>
+
+                <p>
+                  Opciones saludables y deliciosas.
+                </p>
+
+                <button>
+                  Ver
+                </button>
+
+              </div>
+
+            </div>
+
           </div>
 
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-
-          <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
-            class="card-img-top"
-            alt="Ensaladas">
-
-          <div class="card-body">
-            <h3 class="card-title h5">Ensaladas</h3>
-            <p class="card-text">
-              Opciones saludables llenas de vitaminas y energía.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="container py-5">
-
-    <div class="row align-items-center g-4">
-
-      <div class="col-md-6">
-        <img
-          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop"
-          class="img-fluid rounded shadow"
-          alt="Nutrición">
-      </div>
-
-      <div class="col-md-6">
-
-        <h2>Comprometidos con la Nutrición</h2>
-
-        <p>
-          Nuestro programa PAE ofrece refrigerios equilibrados
-          para apoyar el aprendizaje y bienestar de los estudiantes.
-        </p>
-
-        <p>
-          Trabajamos con ingredientes frescos y altos estándares
-          de calidad alimentaria.
-        </p>
 
       </div>
 
     </div>
-  </section>
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">© 2026 PAE Refrigerio Escolar</p>
-  </footer>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
