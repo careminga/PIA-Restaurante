@@ -1,79 +1,120 @@
-/* Variables */
 :root {
-    --light-purple: #f3e5f5;
-    --main-purple: #7e57c2;
-    --gris-grafito: #343a40;
-    --white: #ffffff;
+    --purple-light: #f3e5f5;
+    --purple-main: #7e57c2;
+    --purple-dark: #5e35b1;
+    --grafito: #343a40;
+    
 }
 
-/* 1. Body Light Purple */
 body {
-    background-color: var(--light-purple);
+    background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
+    overflow-x: hidden;
 }
 
-/* 2. Navbar Gris Grafito y Letras Blancas */
-header.n-escolar-dark {
-    background-color: var(--gris-grafito);
-    padding: 0.8rem 0;
+
+.custom-navbar {
+    background-color: var(--grafito);
+    border-bottom: 1px solid #ffffff;
+    padding: 0.7rem 0;
 }
 
-/* SELECTOR CLAVE: Este selector le gana al negro de Bootstrap */
-header.n-escolar-dark .navbar-nav .nav-link.item-nav {
-    color: var(--white);
-    font-weight: 500;
-    opacity: 0.85; /* Un poco suave por defecto */
-    margin-left: 20px;
-    transition: all 0.3s ease;
+.navbar-brand {
+    color: var(--purple-light) ;
 }
 
-header.n-escolar-dark .navbar-nav .nav-link.item-nav:hover,
-header.n-escolar-dark .navbar-nav .nav-link.item-nav.active {
-    color: var(--white);
-    opacity: 1; /* Brilla al pasar el mouse */
-    text-decoration: underline; /* Opcional: para saber dónde estás */
+.nav-link{
+    color: #f3e5f5;
 }
 
-/* Marca en Blanco */
-header.n-escolar-dark .brand-edu {
-    color: var(--white);
-    font-weight: 700;
-    font-size: 1.6rem;
-    text-decoration: none;
-}
-
-/* 3. Botón Iniciar Sesión (Morado que cambia a Blanco) */
-.btn-login-edu {
-    background-color: var(--main-purple);
-    color: var(--white);
-    border: 2px solid var(--main-purple);
+.btn-login-nav {
+    background-color: var(--purple-main);
+    color: white;
     border-radius: 50px;
-    padding: 10px 30px;
+    font-weight: 500;
+}
+
+
+.section-hero {
+    min-height: 85vh;
+}
+
+.background-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background-color: var(--purple-light);
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+}
+
+.z-index-2 {
+    position: relative;
+    z-index: 2;
+}
+
+
+.badge-special {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--purple-light);
+    color: var(--purple-main);
+    border-radius: 50px;
+    font-size: 0.8rem;
     font-weight: 600;
+}
+
+.text-grafito {
+    color: var(--grafito);
+}
+
+.btn-main-purple {
+    background-color: var(--purple-main);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid var(--purple-main);
     transition: all 0.3s ease;
-    text-decoration: none;
 }
 
-.btn-login-edu:hover {
-    background-color: var(--white);
-    color: var(--main-purple);
-    border-color: var(--white);
+.btn-main-purple:hover {
+    background-color: white;
+    color: var(--purple-main);
+    transform: translateY(-3px);
 }
 
-/* 4. Footer Gris Grafito con letras blancas */
-footer.f-escolar-dark {
-    background-color: var(--gris-grafito);
-    color: var(--white);
-    border-top: 5px solid var(--main-purple);
-}
 
-/* 5. Carrusel de Plato Circular */
 .plate-img {
     width: 480px;
     height: 480px;
     object-fit: cover;
+    border: 12px solid white;
+}
+
+.custom-control {
+    background-color: rgba(0,0,0,0.2);
+    padding: 20px;
     border-radius: 50%;
-    border: 15px solid var(--white);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+.custom-footer {
+    background-color: var(--grafito);
+    color: #ffffff;
+}
+
+
+@media (max-width: 991px) {
+    .background-shape {
+        width: 100%;
+        height: 45%;
+        top: 55%;
+        clip-path: none;
+    }
+    .plate-img {
+        width: 300px;
+        height: 300px;
+    }
 }
