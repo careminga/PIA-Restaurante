@@ -1,108 +1,115 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ESTILO GENERAL */
-body {
+body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f8f5f2;
+    background: linear-gradient(135deg, #f8f5f2, #ece4f5);
     color: #333;
 }
 
 /* NAVBAR */
-.navbar {
-    background-color: #765185 !important;
-    padding: 10px 10px;
+
+.navbar-custom{
+    background-color: #765185;
+    padding: 15px;
 }
 
-
-
-/* TITULO */
-.titulo {
-    color: #050a0a;
-    font-size: 1.8rem;
+.titulo{
+    color: white;
+    font-size: 2rem;
     font-weight: bold;
-    margin: 0;
-}
-
-/* CONTENEDOR NAV */
-.container {
-    background-color: #cac4c4;
-    border-radius: 8px;
-    padding: 10px 20px;
-}
-
-/* LINKS NAV */
-.nav-link {
-    color: #482749 !important;
-    margin-left: 20px;
     text-decoration: none;
+}
+
+.nav-link{
+    color: white !important;
     font-weight: bold;
+    margin-left: 15px;
     transition: 0.3s;
 }
 
-.nav-link:hover {
-    color: #303177 !important;
+.nav-link:hover{
+    color: #d8c3ff !important;
 }
 
-/* MAIN */
-.main-acercadenos {
-    margin: 50px auto;
-    width: 85%;
-    max-width: 900px;
-    background-color: #cac4c4;
-    padding: 50px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-top: 8px solid #67457a;
+/* CAJA INFORMACIÓN */
+
+.info-box{
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    height: 100%;
+    transition: 0.4s;
+    border-left: 10px solid #765185;
 }
 
-/* TITULOS */
-.h1adn {
-    font-size: 2.5rem;
-    color: #000000;
-    margin-bottom: 20px;
+.info-box:hover{
+    transform: translateY(-8px);
 }
 
-/* PARRAFOS */
-.main-acercadenos p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-top: 15px;
+.titulo-info{
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #5c4188;
 }
 
-/* EFECTO SUTIL */
-.main-acercadenos:hover {
-    transform: scale(1.01);
-    transition: 0.3s;
+/* CAJA CREADORES */
+
+.creadores-box{
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    transition: 0.4s;
+}
+
+.creadores-box:hover{
+    transform: translateY(-8px);
+}
+
+/* TARJETAS */
+
+.card-creador{
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card-creador:hover{
+    transform: scale(1.03);
+}
+
+.imagen-creador{
+    height: 250px;
+    object-fit: cover;
 }
 
 /* FOOTER */
-footer {
+
+.footer-custom{
     background-color: #5c4188;
-    color: black;
+    color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .nav-link {
-        display: block;
-        margin: 10px 0;
-        text-align: center;
+
+@media(max-width:992px){
+
+    .info-box{
+        margin-bottom: 30px;
     }
 
-    .main-acercadenos {
-        padding: 30px;
-    }
+}
 
-    .h1adn {
+@media(max-width:768px){
+
+    .titulo-info{
         font-size: 2rem;
     }
+
+    .info-box,
+    .creadores-box{
+        padding: 25px;
+    }
+
 }

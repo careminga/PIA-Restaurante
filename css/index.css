@@ -1,4 +1,4 @@
-/* Variables */
+
 :root {
     --light-purple: #f3e5f5;
     --main-purple: #7e57c2;
@@ -6,36 +6,27 @@
     --white: #ffffff;
 }
 
-/* 1. Body Light Purple */
 body {
     background-color: var(--light-purple);
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
-/* 2. Navbar Gris Grafito y Letras Blancas */
+
 header.n-escolar-dark {
     background-color: var(--gris-grafito);
     padding: 0.8rem 0;
 }
 
-/* SELECTOR CLAVE: Este selector le gana al negro de Bootstrap */
 header.n-escolar-dark .navbar-nav .nav-link.item-nav {
     color: var(--white);
     font-weight: 500;
-    opacity: 0.85; /* Un poco suave por defecto */
+    opacity: 0.85; 
     margin-left: 20px;
     transition: all 0.3s ease;
 }
 
-header.n-escolar-dark .navbar-nav .nav-link.item-nav:hover,
-header.n-escolar-dark .navbar-nav .nav-link.item-nav.active {
-    color: var(--white);
-    opacity: 1; /* Brilla al pasar el mouse */
-    text-decoration: underline; /* Opcional: para saber dónde estás */
-}
 
-/* Marca en Blanco */
 header.n-escolar-dark .brand-edu {
     color: var(--white);
     font-weight: 700;
@@ -43,7 +34,6 @@ header.n-escolar-dark .brand-edu {
     text-decoration: none;
 }
 
-/* 3. Botón Iniciar Sesión (Morado que cambia a Blanco) */
 .btn-login-edu {
     background-color: var(--main-purple);
     color: var(--white);
@@ -61,14 +51,12 @@ header.n-escolar-dark .brand-edu {
     border-color: var(--white);
 }
 
-/* 4. Footer Gris Grafito con letras blancas */
 footer.f-escolar-dark {
     background-color: var(--gris-grafito);
     color: var(--white);
     border-top: 5px solid var(--main-purple);
 }
 
-/* 5. Carrusel de Plato Circular */
 .plate-img {
     width: 480px;
     height: 480px;
