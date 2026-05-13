@@ -106,3 +106,13 @@ body {
     transform: scale(1.05);
     color: white;
 }
+
+.addplat {
+    color: white;
+    text-decoration: none;
+}
+
+.addplat:hover {
+    color: white;
+    text-decoration: none;
+}
