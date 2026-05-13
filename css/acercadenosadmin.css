@@ -1,41 +1,103 @@
-.adnamain {
-    color: hwb(271 1% 76%)
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #f8f5f2, #ece4f5);
+    color: #333;
 }
 
-.acercade {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color: hwb(271 1% 76%)
+.navbar-custom{
+    background-color: #765185;
+    padding: 15px;
 }
 
-.tituloadna {
-    font-family: Arial, sans-serif;
-}
-
-.navbar {
-    height: 50px;
-}
-
-footer {
-
-    text-align: center;
-    background-color: rgb(180, 130, 227);
+.titulo{
     color: white;
-    padding: 10px 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-footer p {
-    margin: 0;
+.nav-link{
+    color: white !important;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
 }
 
-.body {
-    background-color: rgb(224, 214, 233);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
+.nav-link:hover{
+    color: #d8c3ff !important;
 }
 
-main {
-    flex: 1;
+.info-box{
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    height: 100%;
+    transition: 0.4s;
+    border-left: 10px solid #765185;
+}
+
+.info-box:hover{
+    transform: translateY(-8px);
+}
+
+.titulo-info{
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #5c4188;
+}
+
+.creadores-box{
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    transition: 0.4s;
+}
+
+.creadores-box:hover{
+    transform: translateY(-8px);
+}
+
+.card-creador{
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card-creador:hover{
+    transform: scale(1.03);
+}
+
+.imagen-creador{
+    height: 250px;
+    object-fit: cover;
+}
+
+.footer-custom{
+    background-color: #5c4188;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+@media(max-width:992px){
+
+    .info-box{
+        margin-bottom: 30px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .titulo-info{
+        font-size: 2rem;
+    }
+
+    .info-box,
+    .creadores-box{
+        padding: 25px;
+    }
+
 }
