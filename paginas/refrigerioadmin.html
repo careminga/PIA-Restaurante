@@ -2,154 +2,133 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> Refrigerio </title>
+    <title> Refrigerio </title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/refrigerioadmin.css">
+    <link rel="stylesheet" href="../css/refrigerioadmin.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg n-escolar-dark">
 
-  <header>
-  <nav class="navbar navbar-expand-lg n-escolar-dark">
+            <div class="container">
 
-    <div class="container">
+                <a class="navbar-brand brand-edu" href="#">
+                    EDU FOOD
+                </a>
 
-      <a class="navbar-brand brand-edu" href="#">
-        EDU FOOD
-      </a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 
-      <button
-        class="navbar-toggler bg-light"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                <div class="collapse navbar-collapse justify-content-end" id="menu">
 
-      <div class="collapse navbar-collapse justify-content-end" id="menu">
+                    <div class="navbar-nav align-items-center">
 
-        <div class="navbar-nav align-items-center">
+                        <a class="nav-link item-nav active" href="./inadministrador.html">
+                            Inicio
+                        </a>
 
-          <a class="nav-link item-nav active" href="./inadministrador.html">
-            Inicio
-          </a>
+                        <a class="nav-link item-nav" href="./acercadenosotrosadmin.html">
+                            Acerca de nosotros
+                        </a>
 
-          <a class="nav-link item-nav" href="./acercadenosotrosadmin.html">
-            Acerca de nosotros
-          </a>
+                        <a class="btn-login-edu" href="./iniciodesesión.html">
+                            Iniciar sesión
+                        </a>
+                        
+                        <a href="./configuracionadmin.html" class="profile-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                        </a>
 
-          <a class="btn-login-edu" href="./iniciodesesión.html">
-            Iniciar sesión
-          </a>
+                    </div>
+                </div>
 
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Refrigerios</h2>
+            <button class="btn btn-primary">
+                Ver Menú
+            </button>
         </div>
-      </div>
-
-    </div>
-  </nav>
-</header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Refrigerios</h2>
-      <button class="btn btn-primary">
-        Ver Menú
-      </button>
-    </div>
-  </section>
+    </section>
 
   <section class="container py-5">
 
-    <div class="section-title text-center mb-5">
-      <h2>Nuestros Refrigerios</h2>
-    </div>
+        <div class="container-fluid">
 
-    <div class="row g-4">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop"
-            class="card-img-top"
-            alt="Frutas frescas">
+            <div class="collapse navbar-collapse justify-content-center" id="menu">
 
-          <div class="card-body">
-            <h3 class="card-title h5">Frutas Frescas</h3>
-            <p class="card-text">
-              Frutas saludables y naturales todos los días.
-            </p>
-          </div>
+            </div>
 
-        </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+    </nav>
 
-          <img
-            src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop"
-            class="card-img-top"
-            alt="Sandwich">
+    <div class="container-fluid mt-4" style="background-color: #f3e5f5;">
 
-          <div class="card-body">
-            <h3 class="card-title h5">Sandwich Nutritivo</h3>
-            <p class="card-text">
-              Preparado con ingredientes frescos y balanceados.
-            </p>
-          </div>
+        <div class="row g-4">
 
-        </div>
-      </div>
+            <div class="col-lg-6">
 
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+                <div class="main-card">
 
-          <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
-            class="card-img-top"
-            alt="Ensaladas">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
+                        class="main-image" alt="Refrigerio">
 
-          <div class="card-body">
-            <h3 class="card-title h5">Ensaladas</h3>
-            <p class="card-text">
-              Opciones saludables llenas de vitaminas y energía.
-            </p>
-          </div>
+                    <h1>
+                        Refrigerio Saludable
+                    </h1>
 
-        </div>
-      </div>
+                    <p>
+                        Energía y bienestar en cada refrigerio
+                    </p>
 
-    </div>
-  </section>
+                    <button class="btn-menu">
+                        Ver menú escolar
+                    </button>
 
-  <section class="container py-5">
+                </div>
 
-    <div class="row align-items-center g-4">
+            </div>
 
-      <div class="col-md-6">
-        <img
-          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop"
-          class="img-fluid rounded shadow"
-          alt="Nutrición">
-      </div>
-    </div>
-  </section>
+            <div class="col-lg-6">
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">© 2026 EDU FOOD</p>
-  </footer>
+                <div class="row g-4">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+                    <div class="col-md-6">
+
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop"
+                                class="img-fluid rounded shadow" alt="Nutrición">
+                        </div>
+                    </div>
+
+                    <footer class="bg-dark text-white text-center py-3">
+                        <p class="mb-0">© 2026 EDU FOOD</p>
+                    </footer>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
