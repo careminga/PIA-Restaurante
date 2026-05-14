@@ -1,0 +1,99 @@
+body{
+    background: linear-gradient(135deg, #f3edf8, #e6d9f7);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar-custom{
+    background-color: #6f4a8e;
+    padding: 15px;
+}
+
+.titulo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-link{
+    color: white !important;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #d9b8ff !important;
+}
+
+/* CONTENEDOR */
+
+.lista-box{
+    background-color: white;
+    padding: 40px;
+    border-radius: 25px;
+}
+
+/* TITULO */
+
+.titulo-lista{
+    color: #6f4a8e;
+    font-weight: bold;
+}
+
+/* BOTÓN */
+
+.btn-agregar{
+    background-color: #a95bb6;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-agregar:hover{
+    background-color: #8d4699;
+    color: white;
+}
+
+/* BUSCADOR */
+
+.buscador{
+    border-radius: 12px;
+    padding: 12px;
+}
+
+/* TABLA */
+
+.tabla-header{
+    background-color: #6f4a8e;
+    color: white;
+}
+
+.table{
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.footer-custom{
+    background-color: #6f4a8e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+@media(max-width:768px){
+
+    .lista-box{
+        padding: 20px;
+    }
+
+    .titulo-lista{
+        font-size: 1.8rem;
+    }
+
+}
