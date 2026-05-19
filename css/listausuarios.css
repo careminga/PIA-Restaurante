@@ -3,8 +3,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* NAVBAR */
-
 .navbar-custom{
     background-color: #6f4a8e;
     padding: 15px;
@@ -17,17 +15,15 @@ body{
 }
 
 .nav-link{
-    color: white !important;
+    color: white;
     margin-left: 15px;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .nav-link:hover{
-    color: #d9b8ff !important;
+    color: #d9b8ff;
 }
-
-/* CONTENEDOR */
 
 .lista-box{
     background-color: white;
@@ -35,14 +31,10 @@ body{
     border-radius: 25px;
 }
 
-/* TITULO */
-
 .titulo-lista{
     color: #6f4a8e;
     font-weight: bold;
 }
-
-/* BOTÓN */
 
 .btn-agregar{
     background-color: #a95bb6;
@@ -58,14 +50,10 @@ body{
     color: white;
 }
 
-/* BUSCADOR */
-
 .buscador{
     border-radius: 12px;
     padding: 12px;
 }
-
-/* TABLA */
 
 .tabla-header{
     background-color: #6f4a8e;
