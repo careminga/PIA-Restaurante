@@ -11,7 +11,7 @@ body {
 }
 
 .navbar {
-    background-color: #7a4f85 !important;
+    background-color: #7a4f85;
     padding: 10px;
 }
 
@@ -21,7 +21,6 @@ body {
     padding: 10px 15px;
 }
 
-/* TITULO */
 h1 {
     color: #050a0a;
     font-size: 1.8rem;
@@ -54,7 +53,6 @@ body>h1 {
     color: #000;
 }
 
-/* FORMULARIO */
 form {
     width: 90%;
     max-width: 450px;
@@ -66,32 +64,26 @@ form {
     border-top: 8px solid #704385;
 }
 
-/* LABELS */
 form label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
 }
 
-/* INPUTS */
 form input,
 form select {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: none;
     border-radius: 5px;
-    outline: none;
 }
 
-/* BOTON */
 button {
     width: 100%;
     margin-top: 20px;
     padding: 10px;
     background-color: #aa65a7;
     color: white;
-    border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
@@ -102,9 +94,7 @@ button:hover {
     background-color: #784c83;
 }
 
-/* RECUPERAR CONTRASEÑA */
 nav ul {
-    list-style: none;
     text-align: center;
     margin-top: 20px;
 }
@@ -112,7 +102,6 @@ nav ul {
 nav a {
     color: #316863;
     font-weight: bold;
-    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -120,7 +109,6 @@ nav a:hover {
     color: #2c2096;
 }
 
-/* FOOTER */
 footer {
     background-color: #8f3f8b;
     color: black;
@@ -132,10 +120,8 @@ footer {
 footer a {
     color: #292e70;
     font-weight: bold;
-    text-decoration: none;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     form {
         padding: 25px;

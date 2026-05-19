@@ -24,7 +24,7 @@ body {
 }
 
 .nav-link {
-    color: #ced4da !important; 
+    color: #ced4da; 
     font-weight: 500;
 }
 
@@ -48,7 +48,7 @@ body {
 
 header .navbar-nav .nav-link:hover, 
 header .navbar-nav .nav-link.active {
-    color: #ffffff !important; 
+    color: #ffffff; 
 }
 
 

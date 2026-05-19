@@ -32,16 +32,13 @@
 
             <div class="collapse navbar-collapse justify-content-end" id="menu">
 
-                <div class="navbar-nav">
-
-                    <a class="nav-link" href="#">
-                        Inicio
-                    </a>
-
-                    <a class="nav-link" href="#">
-                        Estudiantes
-                    </a>
-                </div>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto links-navinad">
+                        <a class="nav-link" href="./inadministrador.html">Inicio</a>
+                        <a class="nav-link" href="./paginadeplatosadmin.html">Modificar platos</a>
+                        <a class="nav-link" href="./refrigerioadmin.html">Modificar refrigerios</a>
+                        <a class="nav-link" href="./acercadenosotros.html">Acerca de nosotros</a>
+                    </div>
             </div>
         </div>
     </nav>
@@ -57,10 +54,6 @@
                     Lista de estudiantes
                 </h1>
 
-                <button class="btn btn-agregar">
-                    + Agregar estudiante
-                </button>
-
             </div>
 
             <div class="mb-4">
@@ -71,102 +64,79 @@
 
             </div>
 
+<div class="table-responsive">
+
+    <table class="table table-hover align-middle text-center">
+
+        <thead class="tabla-header">
+
+            <tr>
+
+                <th>Numero de usuario</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Curso</th>
+                <th>Estado</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>001</td>
+                <td>Angie Bastidas</td>
+                <td>angie@gmail.com</td>
+                <td>11°</td>
+
+                <td>
+                    <span class="badge bg-success">
+                        Activo
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>002</td>
+                <td>Valentina Lopez</td>
+                <td>valentina@gmail.com</td>
+                <td>11°</td>
+
+                <td>
+                    <span class="badge bg-success">
+                        Activo
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>003</td>
+                <td>Mateo Vasquez</td>
+                <td>mateo@gmail.com</td>
+                <td>11°</td>
+
+                <td>
+                    <span class="badge bg-warning text-dark">
+                        Pendiente
+                    </span>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
        
-            <div class="table-responsive">
-
-                <table class="table table-hover align-middle text-center">
-
-                    <thead class="tabla-header">
-
-                        <tr>
-
-                            <th>Numero de Usuario</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Curso</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-
-                            <td>001</td>
-                            <td>Angie Bastidas</td>
-                            <td>angie@gmail.com</td>
-                            <td>11°</td>
-
-                            <td>
-                                <span class="badge bg-success">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-
-                            <td>002</td>
-                            <td>Valentina Lopez</td>
-                            <td>valentina@gmail.com</td>
-                            <td>11°</td>
-
-                            <td>
-                                <span class="badge bg-success">
-                                    Activo
-                                </span>
-                            </td>
-
-                            <td>
-
-                                <button class="btn btn-sm btn-primary">
-                                    Editar
-                                </button>
-
-                                <button class="btn btn-sm btn-danger">
-                                    Eliminar
-                                </button>
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>003</td>
-                            <td>Mateo Vasquez</td>
-                            <td>mateo@gmail.com</td>
-                            <td>10°</td>
-
-                            <td>
-                                <span class="badge bg-warning text-dark">
-                                    Pendiente
-                                </span>
-                            </td>
-
-                            <td>
-
-                                <button class="btn btn-sm btn-primary">
-                                    Editar
-                                </button>
-
-                                <button class="btn btn-sm btn-danger">
-                                    Eliminar
-                                </button>
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
+            
         </div>
 
     </main>
