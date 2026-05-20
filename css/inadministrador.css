@@ -15,6 +15,24 @@ nav.navbar {
     padding: 10px 20px;
 }
 
+.profile-icon {
+  color: #ffffff;        
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ee6cff;      
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
 .links-navinad {
     display: flex;
     gap: 20px;
