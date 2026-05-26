@@ -1,23 +1,37 @@
-console.log("hola");
-const user = {
-    "email": "admin@admin.com",
-    "password": "admin123",
-    "user": "admin"
-}
+const usuarios = [
+    {
+        "email": "admin@admin.com",
+        "password": "admin123",
+        "role": "admin"  
+    },
+    {
+        "email": "user@user.com",
+        "password": "user123",
+        "role": "est"  
+    }
+];
 
 const formulario = document.getElementById("inicioSesion");
 
-formulario.addEventListener("submit",function(event){
+formulario.addEventListener("submit", function(event) {
     event.preventDefault();
     
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    if (user.email === email && user.password === password){
-        window.location.href="inadministrador.html"
-        sessionStorage.setItem("user", user.user).
-    return
+    let emailInput = document.getElementById("email").value;
+    let passwordInput = document.getElementById("password").value;
+    
+    let usuarioEncontrado = usuarios.find(u => u.email === emailInput && u.password === passwordInput);
+
+    if (usuarioEncontrado) {
+        sessionStorage.setItem("userRole", usuarioEncontrado.role);
+        
+        if (usuarioEncontrado.role === "admin") {
+            window.location.href = "inadministrador.html";
+        } else if (usuarioEncontrado.role === "est") {
+            window.location.href = "inususario.html";
+        }
+        return;
     }
+    
     formulario.reset();
-    return alert("usuario no encontrado");
-    console.log("entre");
-})
+    alert("Usuario o contraseña incorrectos");
+});
