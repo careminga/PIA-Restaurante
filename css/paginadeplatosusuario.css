@@ -28,6 +28,24 @@ body {
     font-weight: 500;
 }
 
+.profile-icon {
+  color: #ffffff;          
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ee6cff;      
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
 header .navbar-nav .nav-link:hover, 
 header .navbar-nav .nav-link.active {
     color: #ffffff; 
@@ -84,7 +102,7 @@ footer{
 
 
 .custom-footer {
-    background-color: var(--dark-gray);
+    background-color: #343a40;
     color: #ced4da;
     border-top: none;
 }
