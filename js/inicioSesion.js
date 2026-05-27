@@ -27,7 +27,7 @@ formulario.addEventListener("submit", function(event) {
         if (usuarioEncontrado.role === "admin") {
             window.location.href = "inadministrador.html";
         } else if (usuarioEncontrado.role === "est") {
-            window.location.href = "inususario.html";
+            window.location.href = "inusuario.html";
         }
         return;
     }
