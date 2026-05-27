@@ -1,189 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Edu Food</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="../css/refrigerioadmin.css">
-
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu Food</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/paginadeplatosusuario.css">
 </head>
+<body class="d-flex flex-column min-vh-100">
 
-<body>
-   <header >
-  <nav class="navbar navbar-expand-lg n-escolar-dark">
+    <header class="custom-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid container">
+                <div class="navbar-brand">
+                    <h1 class="fw-bold">Edu Food</h1>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="./inusuario.html">Inicio</a>
+                        <a class="nav-link" href="../paginas/refrigerioadmin.html">refrigerios</a>
+                        <a class="nav-link" href="./acercadenosotrosusuario.html">Acerca de nosotros</a>
+                        <a href="./configuracionusuario.html" class="profile-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main class="container my-5 flex-grow-1">
+        <div class="row g-4">
+            
+            <div class="col-lg-6">
+                <div class="card main-card h-100 shadow-sm p-4 border-0">
+                    <div class="text-end text-muted small fw-bold">472 kcal</div>
+                    <div class="text-center my-4">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" alt="Almuerzo del día" class="img-fluid rounded-circle shadow-sm main-img-circle">
+                    </div>
+                    <h2 class="fw-bold text-center">Refrigerio Nutritivo Principal</h2>
+                    
+                    <div class="d-flex justify-content-center flex-wrap gap-2 my-4">
+                        <span class="badge badge-nutri">Proteína <b>26g</b></span>
+                        <span class="badge badge-nutri">Carbohidratos <b>45g</b></span>
+                        <span class="badge badge-nutri">Fibra <b>8g</b></span>
+                    </div>
 
-      <a class="navbar-brand brand-edu" href="#">
-        EDU FOOD
-      </a>
+                    <p class="text-muted text-center px-lg-4">Información detallada sobre el balance nutricional de hoy. Este menú cumple con los estándares de salud para el desarrollo estudiantil.</p>
+                    
+                    <div class="text-center mt-auto pt-4">
+                        <button class="btn btn-purple px-4 w-100">Ver Tabla Nutricional Completa</button>
+                    </div>
+                </div>
+            </div>
 
-      <button
-        class="navbar-toggler bg-light"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#menu">
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <h4 class="fw-bold mb-2 text-secondary border-start border-4 border-purple ps-3">Menú Escolar</h4>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card sub-card shadow-sm p-3 h-100 text-center border-0">
+                            <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=150&q=80" class="img-fluid mb-2 mx-auto rounded-3" alt="Frutas">
+                            <h6 class="fw-bold mb-1">Bowl de Frutas</h6>
+                            <p class="x-small text-muted mb-2">Variedad de temporada</p>
+                            <button class="btn btn-info-custom w-100 mt-auto">Ingredientes reservados consulta para mas información</button>
+                        </div>
+                    </div>
 
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse justify-content-end" id="menu">
+                    <div class="col-md-6">
+                        <div class="card sub-card shadow-sm p-3 h-100 text-center border-0">
+                            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=150&q=80" class="img-fluid mb-2 mx-auto rounded-3" alt="Yogur">
+                            <h6 class="fw-bold mb-1">Yogur Natural</h6>
+                            <p class="x-small text-muted mb-2">Con cereales integrales</p>
+                            <button class="btn btn-info-custom w-100 mt-auto">Ingredientes reservados consulta para mas información</button>
+                        </div>
+                    </div>
 
-        <div class="navbar-nav align-items-center">
+                    <div class="col-md-6">
+                        <div class="card sub-card shadow-sm p-3 h-100 text-center border-0">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" class="img-fluid mb-2 mx-auto rounded-3" alt="Ensalada">
+                            <h6 class="fw-bold mb-1">Ensalada Mix</h6>
+                            <p class="x-small text-muted mb-2">Vegetales frescos</p>
+                            <button class="btn btn-info-custom w-100 mt-auto">Ingredientes reservados consulta para mas información</button>
+                        </div>
+                    </div>
 
-          <a class="nav-link item-nav active" href="#">
-            Inicio
-          </a>
-
-          <a class="nav-link item-nav" href="./acercadenosotros.html">
-            Acerca de nosotros
-          </a>
-
+                    <div class="col-md-6">
+                        <div class="card sub-card shadow-sm p-3 h-100 text-center border-0">
+                            <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=150&q=80" class="img-fluid mb-2 mx-auto rounded-3" alt="Snack">
+                            <h6 class="fw-bold mb-1">Barra Avena</h6>
+                            <p class="x-small text-muted mb-2">Energía natural</p>
+                            <button class="btn btn-info-custom w-100 mt-auto">Ingredientes reservados consulta para mas información</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-      </div>
-
-    </div>
-  </nav>
-</header>
-
-  <div class="main-container" style="background-color: #f3e5f5;">
-
-    <nav class="navbar navbar-expand-lg">
-
-      <div class="container-fluid">
-
-        <button class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menu">
-
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-center" id="menu">
-
-          </div>
-
-
-    </nav>
-
-    <div class="container-fluid mt-4" style="background-color: #f3e5f5;">
-
-      <div class="row g-4">
-
-        <div class="col-lg-6">
-
-          <div class="main-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
-              class="main-image"
-              alt="Refrigerio">
-
-            <h1>
-              Refrigerio Saludable
-            </h1>
-
-            <p>
-              Energía y bienestar en cada refrigerio
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="col-lg-6">
-
-          <div class="row g-4">
-
-            <div class="col-md-6">
-
-              <div class="food-card">
-
-                <img
-                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
-                  alt="Ensalada">
-
-                <h5>Ensalada Fresca</h5>
-
-                <p>
-                  Rica en vitaminas y minerales.
-                </p>
-
-
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <div class="food-card">
-
-                <img
-                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop"
-                  alt="Frutas">
-
-                <h5>Frutas Mixtas</h5>
-
-                <p>
-                  Frutas naturales seleccionadas.
-                </p>
-
-
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <div class="food-card">
-
-                <img
-                  src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop"
-                  alt="Sandwich">
-
-                <h5>Sandwich Escolar</h5>
-
-                <p>
-                  Preparado diariamente.
-                </p>
-
-
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <div class="food-card">
-
-                <img
-                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop"
-                  alt="Nutrición">
-
-                <h5>Menú Nutritivo</h5>
-
-                <p>
-                  Opciones saludables y deliciosas.
-                </p>
-
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
+    </main>
 
       </div>
 
@@ -193,5 +117,15 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+  </div>
+
+  </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

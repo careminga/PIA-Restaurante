@@ -23,9 +23,40 @@ body {
     margin-bottom: 0;
 }
 
-.nav-link {
-    color: #ced4da; 
-    font-weight: 500;
+.nav-link{
+    color: #ffffff;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto; 
+    align-items: center; 
+}
+
+.fw-bold{
+    font-family: Georgia;
+    font-size: 2rem;
+}
+
+.profile-icon {
+  color: #ffffff;          
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ee6cff;      
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 header .navbar-nav .nav-link:hover, 
@@ -84,8 +115,8 @@ footer{
 
 
 .custom-footer {
-    background-color: var(--dark-gray);
-    color: #ced4da;
+    background-color: #343a40;
+    color: #ffffff;
     border-top: none;
 }
 

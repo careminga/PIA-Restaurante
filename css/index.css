@@ -12,6 +12,9 @@ body {
     overflow-x: hidden;
 }
 
+.navbar-brand {
+    font-family: Georgia;
+}
 
 .custom-navbar {
     background-color: var(--grafito);

@@ -2,28 +2,34 @@
   --bg-navbar: #2f3640;
   --white: #fff;
   --purple: #7c4dff;
-  --green: #2E8B57;
+  --green: ;
 }
 
-/* GENERAL */
+
 
 body{
   font-family: Arial, Helvetica, sans-serif;
   background: #f5f6fa;
 }
+
 .n-escolar-dark{
   background-color: var(--bg-navbar);
   padding: 18px 0;
 }
 
+.navbar-brand{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .brand-edu{
-  color: white !important;
+  color: white ;
   font-size: 2rem;
   font-weight: 800;
 }
 
+
 .item-nav{
-  color: white !important;
+  color: white ;
   margin-left: 20px;
   font-size: 1.05rem;
 }
@@ -34,7 +40,7 @@ body{
 
 .btn-login-edu{
   background: var(--purple);
-  color: white !important;
+  color: white ;
   padding: 12px 30px;
   border-radius: 50px;
   margin-left: 25px;
@@ -42,7 +48,90 @@ body{
   font-weight: bold;
 }
 
-/* HERO */
+
+.hero{
+  padding: 80px 0;
+  background: #ece1ef;
+}
+
+.subtitle{
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero h1{
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 20px 0;
+}
+
+.hero-text{
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6fa;
+}
+
+
+
+.n-escolar-dark{
+  background-color: var(--bg-navbar);
+  padding: 18px 0;
+}
+
+.brand-edu{
+  color: white ;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.item-nav{
+  color: white ;
+  margin-left: 20px;
+  font-size: 1.05rem;
+}
+
+.profile-icon {
+  color: #ffffff;          
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ee6cff;      
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+
+
+.item-nav.active{
+  text-decoration: underline;
+}
+
+.btn-login-edu{
+  background: var(--purple);
+  color: white ;
+  padding: 12px 30px;
+  border-radius: 50px;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
 
 .hero{
   padding: 80px 0;
@@ -74,7 +163,7 @@ body{
   box-shadow: 0 10px 25px rgba(0,0,0,.15);
 }
 
-/* CARDS */
+
 
 .title-section{
   color: var(--green);
@@ -104,7 +193,7 @@ body{
   font-weight: bold;
 }
 
-/* FOOTER */
+
 
 .footer-user{
   background: var(--bg-navbar);
@@ -113,20 +202,24 @@ body{
   margin-top: 50px;
 }
 
-/* RESPONSIVE */
 
-@media(max-width:768px){
 
-  .hero{
+@media(max-width:768px)
+{
+
+  .hero {
     text-align: center;
+    margin-top: auto;
+    background-color: rgb(180, 130, 227);
+    color: white;
+    padding: 10px 30px;
   }
+}
 
-  .hero h1{
-    font-size: 2.8rem;
-  }
-
-  .hero-img{
-    margin-top: 40px;
-  }
-
+.carr {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 5px solid #2f0243;
+    border-radius: 15px;
+    overflow: hidden;
 }

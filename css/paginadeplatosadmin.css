@@ -9,6 +9,8 @@
 
 .edufod{
     color: #ffffff;
+    font-family: Georgia;
+    font-size: 2rem;
 }
 
 body {
@@ -48,6 +50,23 @@ body {
     filter: invert(1);
 }
 
+.profile-icon {
+  color: #ffffff;          
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ee6cff;      
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 32px;
+  height: 32px;
+}
 
 .text-grafito {
     color: var(--gris-grafito);
@@ -99,6 +118,10 @@ body {
     font-weight: 600;
     border: none;
     transition: 0.3s;
+}
+
+footer{
+    background-color: #343a40;
 }
 
 .btn-purple:hover {
