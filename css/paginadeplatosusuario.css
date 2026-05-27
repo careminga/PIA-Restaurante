@@ -1,0 +1,149 @@
+
+:root {
+    --bg-light-purple: #f3e5f5; 
+    --dark-gray: #343a40;      
+    --purple-main: #7e57c2;    
+    --gray-muted: #6c757d;
+}
+
+body {
+    background-color: var(--bg-light-purple);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.custom-header {
+    background-color: var(--dark-gray);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar-brand h1 {
+    color: #ffffff; 
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.nav-link{
+    color: #ffffff;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto; 
+    align-items: center; 
+}
+
+.fw-bold{
+    font-family: Georgia;
+    font-size: 2rem;
+}
+
+.profile-icon {
+  color: #ffffff;          
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ee6cff;      
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+header .navbar-nav .nav-link:hover, 
+header .navbar-nav .nav-link.active {
+    color: #ffffff; 
+}
+
+
+.main-card, .sub-card {
+    border-radius: 25px;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.main-img-circle {
+    max-height: 220px;
+    width: 220px;
+    object-fit: cover;
+    border: 5px solid var(--bg-light-purple);
+}
+
+.badge-nutri {
+    background-color: var(--bg-light-purple);
+    color: var(--gray-muted);
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.btn-purple {
+    background-color: var(--purple-main);
+    color: white;
+    border-radius: 50px;
+    border: none;
+}
+
+footer{
+    background-color: #343a40;
+
+}
+
+.btn-purple:hover {
+    background-color: var(--purple-dark);
+}
+
+.btn-info-custom {
+    background-color: #ffffff;
+    color: var(--purple-main);
+    border: 1.5px solid var(--purple-main);
+    font-size: 0.6rem;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+
+.custom-footer {
+    background-color: #343a40;
+    color: #ffffff;
+    border-top: none;
+}
+
+.text-purple-accent {
+    color: #d1c4e9; 
+    text-decoration: none;
+}
+
+.text-purple-accent:hover {
+    color: #ffffff;
+}
+
+.btn-info-custom {
+    background-color: var(--purple-main);
+    color: #ffffff;
+    border: 1px solid var(--purple-main);
+    font-size: 0.6rem;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px;
+    line-height: 1.1;
+    transition: all 0.3s ease; 
+}
+
+.btn-info-custom:hover {
+    background-color: #ffffff;
+    color: var(--purple-main);
+    border: 1px solid var(--purple-main);
+    cursor: pointer;
+}
