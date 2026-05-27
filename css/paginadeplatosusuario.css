@@ -36,6 +36,11 @@ body {
     align-items: center; 
 }
 
+.fw-bold{
+    font-family: Georgia;
+    font-size: 2rem;
+}
+
 .profile-icon {
   color: #ffffff;          
   text-decoration: none;

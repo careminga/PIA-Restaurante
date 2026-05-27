@@ -2,28 +2,34 @@
   --bg-navbar: #2f3640;
   --white: #fff;
   --purple: #7c4dff;
-  --green: #2E8B57;
+  --green: ;
 }
 
-/* GENERAL */
+
 
 body{
   font-family: Arial, Helvetica, sans-serif;
   background: #f5f6fa;
 }
+
 .n-escolar-dark{
   background-color: var(--bg-navbar);
   padding: 18px 0;
 }
 
+.navbar-brand{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .brand-edu{
-  color: white !important;
+  color: white ;
   font-size: 2rem;
   font-weight: 800;
 }
 
+
 .item-nav{
-  color: white !important;
+  color: white ;
   margin-left: 20px;
   font-size: 1.05rem;
 }
@@ -34,7 +40,7 @@ body{
 
 .btn-login-edu{
   background: var(--purple);
-  color: white !important;
+  color: white ;
   padding: 12px 30px;
   border-radius: 50px;
   margin-left: 25px;
@@ -42,7 +48,6 @@ body{
   font-weight: bold;
 }
 
-/* HERO */
 
 .hero{
   padding: 80px 0;
@@ -81,13 +86,13 @@ body{
 }
 
 .brand-edu{
-  color: white !important;
+  color: white ;
   font-size: 2rem;
   font-weight: 800;
 }
 
 .item-nav{
-  color: white !important;
+  color: white ;
   margin-left: 20px;
   font-size: 1.05rem;
 }
@@ -118,7 +123,7 @@ body{
 
 .btn-login-edu{
   background: var(--purple);
-  color: white !important;
+  color: white ;
   padding: 12px 30px;
   border-radius: 50px;
   margin-left: 25px;
