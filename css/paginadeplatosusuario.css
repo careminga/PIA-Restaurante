@@ -23,9 +23,22 @@ body {
     margin-bottom: 0;
 }
 
-.nav-link {
-    color: #ced4da; 
-    font-weight: 500;
+.nav-link{
+    color: #ffffff;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto; 
+    align-items: center; 
+}
+
+.fw-bold{
+    font-family: Georgia;
+    font-size: 2rem;
 }
 
 .profile-icon {
@@ -103,7 +116,7 @@ footer{
 
 .custom-footer {
     background-color: #343a40;
-    color: #ced4da;
+    color: #ffffff;
     border-top: none;
 }
 
