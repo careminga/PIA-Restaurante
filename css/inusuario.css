@@ -14,7 +14,10 @@
     display: flex;
     gap: 20px;
     padding: 10px 20px;
+    margin-left: auto;
+  
 }
+
 
 .profile-icon {
   color: #ffffff;          
@@ -111,7 +114,7 @@ footer {
 }
 
 footer a {
-    color: #d1b3ff;
+    color: #343a40;
 }
 
 @media (max-width: 850px) {
