@@ -12,7 +12,7 @@ nav.navbar {
 
 .navbar-nav.links-navinad .nav-link {
     color: white;
-    padding: 10px 20px;
+    padding: 10px 5px;
 }
 
 .profile-icon {
@@ -35,7 +35,7 @@ nav.navbar {
 
 .links-navinad {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .contenido-principal {
@@ -44,7 +44,7 @@ nav.navbar {
     justify-content: center;
     align-items: stretch;
     gap: 30px;
-    padding: 50px 5%;
+    padding: 40px 2%;
     flex: 1;
 }
 

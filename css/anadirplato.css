@@ -19,31 +19,22 @@ body {
     background-color: #343a40;
     border-bottom: 2px solid var(--purple-light);
     box-shadow: 0 2px 10px rgba(126, 87, 194, 0.05);
+    width: 100%;
 }
 
 .custom-navbar .logo {
-    color: var(--white) ;
+    color: var(--white);
     font-size: 1.4rem;
     letter-spacing: -0.5px;
 }
 
-.profile-icon {
-  color: #ffffff;        
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  transition: color 0.3s ease;
-}
 
-.profile-icon:hover {
-  color: #ee6cff;      
-  cursor: pointer;
-}
+.custom-navbar .links_navbar {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px; }
 
-.profile-icon svg {
-  width: 32px;
-  height: 32px;
-}
 
 .custom-navbar .nav-link {
     color: var(--white);
@@ -54,16 +45,33 @@ body {
 }
 
 .custom-navbar .nav-link:hover {
-    color: var(--purple-main) ;
+    color: var(--purple-main);
     background-color: var(--purple-light);
 }
-
 
 .custom-navbar .nav-link.active {
-    color: var(--purple-dark) ;
+    color: var(--purple-dark);
     background-color: var(--purple-light);
 }
 
+
+.profile-icon {
+    color: #ffffff;        
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+    color: #ee6cff;      
+    cursor: pointer;
+}
+
+.profile-icon svg {
+    width: 32px;
+    height: 32px;
+}
 
 .main-card {
     background-color: var(--white);
@@ -75,16 +83,6 @@ body {
 .form-card {
     padding-right: 1rem;
 }
-
-@media (max-width: 991.98px) {
-    .main-card {
-        padding: 1.5rem;
-    }
-    .form-card {
-        padding-right: 0;
-    }
-}
-
 
 .title {
     color: var(--grafito);
@@ -125,11 +123,9 @@ body {
     color: #adb5bd;
 }
 
-
 input[type="file"].custom-input {
     padding: 0.5rem;
 }
-
 
 .submit-btn {
     background-color: var(--purple-main);
@@ -180,4 +176,24 @@ input[type="file"].custom-input {
 
 .food-card:hover img {
     transform: scale(1.05);
+} 
+
+@media (max-width: 991.98px) {
+   
+    .custom-navbar .links_navbar {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .main-card {
+        padding: 1.5rem;
+    }
+
+    .form-card {
+        padding-right: 0;
+    }
 }
