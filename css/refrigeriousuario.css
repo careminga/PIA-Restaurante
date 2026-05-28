@@ -71,8 +71,6 @@ body{
   margin-bottom: 30px;
 }
 
-<<<<<<< HEAD
-=======
 
 
 body{
@@ -88,13 +86,13 @@ body{
 }
 
 .brand-edu{
-  color: white ;
+  color: white !important;
   font-size: 2rem;
   font-weight: 800;
 }
 
 .item-nav{
-  color: white ;
+  color: white !important;
   margin-left: 20px;
   font-size: 1.05rem;
 }
@@ -125,7 +123,7 @@ body{
 
 .btn-login-edu{
   background: var(--purple);
-  color: white ;
+  color: white !important;
   padding: 12px 30px;
   border-radius: 50px;
   margin-left: 25px;
@@ -197,7 +195,6 @@ body{
 
 
 
->>>>>>> 037490a4b6f20442e04eb44f32abdf5f25618742
 .footer-user{
   background: var(--bg-navbar);
   color: white;
