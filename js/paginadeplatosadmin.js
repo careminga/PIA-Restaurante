@@ -11,5 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const btnenviar = document.getElementById("btnenviar");
-btnenviar.addEventListener("click", function() {
+btnenviar.addEventListener("click", () => {
+    
 });
