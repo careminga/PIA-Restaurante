@@ -9,3 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("No eres administrador")
     }
 });
+
+const btnenviar = document.getElementById("btnenviar");
+btnenviar.addEventListener("click", function() {
+});
