@@ -7,6 +7,30 @@
     --white: #ffffff;
 }
 
+.titulo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.navbar-custom{
+    background-color:#343a40;
+    padding: 15px;
+}
+
+.nav-link{
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #d8c3ff ;
+}
+
 .edufod{
     color: #ffffff;
     font-family: Georgia;
@@ -46,9 +70,9 @@ body {
 }
 
 
-.navbar-toggler-icon {
+/* .navbar-toggler-icon {
     filter: invert(1);
-}
+} */
 
 .profile-icon {
   color: #ffffff;          
