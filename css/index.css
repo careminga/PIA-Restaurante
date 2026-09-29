@@ -6,28 +6,40 @@
     
 }
 
+.titulo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
 body {
     background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
 
-.navbar-brand {
-    font-family: Georgia;
+.navbar-custom{
+    background-color:#343a40;
+    padding: 15px;
+}
+
+.nav-link{
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #d8c3ff ;
 }
 
 .custom-navbar {
     background-color: var(--grafito);
     border-bottom: 1px solid #ffffff;
     padding: 0.7rem 0;
-}
-
-.navbar-brand {
-    color: var(--purple-light) ;
-}
-
-.nav-link{
-    color: #f3e5f5;
 }
 
 .btn-login-nav {

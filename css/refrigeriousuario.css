@@ -5,7 +5,29 @@
   --green: ;
 }
 
+.titulo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
 
+
+.navbar-custom{
+    background-color:#343a40;
+    padding: 15px;
+}
+
+.nav-link{
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #d8c3ff ;
+}
 
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -17,9 +39,9 @@ body{
   padding: 18px 0;
 }
 
-.navbar-brand{
+/* .navbar-brand{
   font-family: Georgia, 'Times New Roman', Times, serif;
-}
+} */
 
 .brand-edu{
   color: white ;
@@ -28,7 +50,7 @@ body{
 }
 
 
-.item-nav{
+/* .item-nav{
   color: white ;
   margin-left: 20px;
   font-size: 1.05rem;
@@ -36,7 +58,7 @@ body{
 
 .item-nav.active{
   text-decoration: underline;
-}
+} */
 
 .btn-login-edu{
   background: var(--purple);
@@ -91,11 +113,11 @@ body{
   font-weight: 800;
 }
 
-.item-nav{
+/* .item-nav{
   color: white ;
   margin-left: 20px;
   font-size: 1.05rem;
-}
+} */
 
 .profile-icon {
   color: #ffffff;          
@@ -117,9 +139,9 @@ body{
 
 
 
-.item-nav.active{
+/* .item-nav.active{
   text-decoration: underline;
-}
+} */
 
 .btn-login-edu{
   background: var(--purple);

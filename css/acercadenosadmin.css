@@ -4,16 +4,16 @@ body{
     color: #333;
 }
 
-.navbar-custom{
-    background-color: #343a40;
-    padding: 15px;
-}
-
 .titulo{
     color: white;
     font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
+}
+
+.navbar-custom{
+    background-color:#343a40;
+    padding: 15px;
 }
 
 .nav-link{
