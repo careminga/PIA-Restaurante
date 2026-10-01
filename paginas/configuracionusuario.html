@@ -8,20 +8,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/configuracionusuario.css">
+    <link rel="stylesheet" href="../css/navbar.css">
 </head>
 <body class="dashboard-grid">
 
+    <header class="edu-header">
+        <nav class="navbar navbar-expand-lg edu-navbar" aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand edu-brand" href="./inusuario.html">Edu Food</a>
     
-    <aside class="sidebar bg-grafito text-white">
-        <header class="sidebar-header">
-            <span class="fs-4 fw-bold text-uppercase">Edu Food</span>
-        </header>
-        <nav class="sidebar-nav">
-            <a href="inusuario.html" class="nav-link"><i class="bi bi-house-door"></i> Inicio</a>
-            <a href="configuracionusuario.html" class="nav-link active"><i class="bi bi-person-gear"></i> Mi Perfil</a>
-            <a href="../index.html" class="nav-link logout mt-auto"><i class="bi bi-box-arrow-left"></i> Salir</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./inusuario.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./paginadeplatosusuario.html">Platos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./refrigeriousuario.html">Refrigerios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./acercadenosotros.html">Acerca de nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="profile-icon" href="./configuracionusuario.html" aria-label="Mi perfil">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                    class="bi bi-person-circle" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link edu-salir" href="../index.html"
+                                onclick="sessionStorage.removeItem('userRole')">Salir</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-    </aside>
+    </header>
 
 
     <main class="main-content bg-light-purple">
