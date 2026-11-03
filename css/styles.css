@@ -1,0 +1,530 @@
+/* ==========================================================================
+   EDU FOOD - MASTER CSS (UNIFICADO Y CORREGIDO DEFINITIVO)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- CUERPOS Y FONDOS ESPECÍFICOS --- */
+body.bg-light-purple, main.bg-light-purple {
+    background-color: #f3e5f5;
+}
+
+body.bodyinad, body.baddy {
+    background-color: rgb(224, 214, 233);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- NAVEGACIÓN Y HEADERS --- */
+.custom-navbar {
+    background-color: #343a40;
+    border-bottom: 1px solid #ffffff;
+    padding: 0.7rem 0;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    color: #f3e5f5;
+}
+
+.nav-link {
+    color: #f3e5f5;
+}
+
+.links_navbar {
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.links_navbar .nav-link,
+.navbar-nav .nav-link,
+.n-admin .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.links_navbar .nav-link:hover,
+.navbar-nav .nav-link:hover,
+.n-admin .nav-link:hover {
+    color: #d1b3ff !important;
+}
+
+.btn-login-nav {
+    background-color: #7e57c2;
+    color: white;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.n-escolar-dark {
+  background: #2f3640;
+  width: 100%;
+  padding: 18px 0;
+}
+
+.brand-edu {
+  color: white !important;
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.item-nav {
+  color: white !important;
+  margin-left: 20px;
+  font-size: 1.05rem;
+  transition: .3s;
+}
+
+.item-nav:hover {
+  opacity: .8;
+}
+
+.item-nav.active {
+  text-decoration: underline;
+}
+
+.btn-user, .btn-login-edu {
+  background: #7c4dff;
+  color: white !important;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.navbar-custom {
+    background-color: #765185;
+    padding: 15px;
+}
+
+.titulo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-custom .nav-link {
+    color: white !important;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #d8c3ff !important;
+}
+
+/* --- HERO & HOME --- */
+.section-hero {
+    min-height: 85vh;
+    position: relative;
+}
+
+.background-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background-color: #f3e5f5;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+}
+
+.z-index-2 {
+    position: relative;
+    z-index: 2;
+}
+
+.badge-special {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #f3e5f5;
+    color: #7e57c2;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.text-grafito {
+    color: #343a40;
+}
+
+.plate-img {
+    width: 480px;
+    height: 480px;
+    object-fit: cover;
+    border: 12px solid white;
+}
+
+/* --- CARRUSEL Y FLECHAS --- */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 1;
+    background: transparent !important;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: transparent !important;
+    opacity: 1;
+}
+
+.custom-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.custom-control:hover {
+    transform: scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(0) saturate(100%);
+    width: 24px;
+    height: 24px;
+}
+
+/* --- CONTENEDORES Y TARJETAS --- */
+.main-container {
+  background: #f3e5f5;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.main-card {
+  background: white;
+  border-radius: 30px;
+  padding: 35px;
+  height: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.food-card {
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,.05);
+  transition: .3s;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+.food-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* --- FORMULARIOS Y LOGIN (CON BORDES APLICADOS) --- */
+form {
+    width: 90%;
+    max-width: 450px;
+    margin: 40px auto;
+    background-color: #cac4c4;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #704385;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input,
+form select,
+.custom-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #bda8c4 !important; /* Borde visible y elegante en todos los inputs */
+    border-radius: 6px;
+    outline: none;
+    background: #faf9ff;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+.custom-input:focus {
+    border-color: #704385 !important; /* Se oscurece al hacerles clic/enfoque */
+    box-shadow: 0 0 5px rgba(112, 67, 133, 0.3);
+}
+
+button, .submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #aa65a7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, .submit-btn:hover {
+    background-color: #784c83;
+}
+
+/* --- ACERCA DE NOSOTROS Y CREADORES --- */
+.info-box {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    height: auto;
+    transition: 0.4s;
+    border-left: 10px solid #765185;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.titulo-info {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #5c4188;
+}
+
+.creadores-box {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    transition: 0.4s;
+    height: auto;
+}
+
+.card-creador {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    margin-bottom: 20px;
+}
+
+.card-creador:hover {
+    transform: scale(1.03);
+}
+
+.imagen-creador {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* --- PANEL INICIO ADMIN / USUARIO --- */
+.Bienvenida {
+    flex: 1;
+    min-width: 380px;
+    max-width: 550px;
+    background-color: #9b7e9c;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #8b3c92;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Bienvenida:hover {
+    transform: scale(1.02);
+}
+
+.linea-decorativa {
+    width: 50px;
+    height: 3px;
+    background-color: #2f0243;
+    margin: 15px auto;
+    border: none;
+    opacity: 1;
+}
+
+.lista-beneficios {
+    text-align: left;
+    display: inline-block;
+    margin: 20px 0;
+    line-height: 1.8;
+    color: black;
+}
+
+.section1 {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+}
+
+.carr {
+    height: 100%;
+    border: 5px solid #2f0243;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carr .carousel-inner {
+    height: 100%;
+}
+
+.carr .carousel-item img {
+    height: 480px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 50px 5%;
+    flex: 1;
+}
+
+/* --- SIDEBAR CONFIGURACIÓN --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #343a40;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: white;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.sidebar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.logout {
+    color: #ff8a8a !important;
+    margin-top: auto;
+}
+
+.btn-edit-img {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #343a40;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+/* --- FOOTERS --- */
+footer, .custom-footer, .footer-user {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+footer a, .footer-user a {
+    color: #d1b3ff;
+    text-decoration: none;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 991px) {
+    .background-shape {
+        width: 100%;
+        height: 45%;
+        top: 55%;
+        clip-path: none;
+    }
+    .plate-img {
+        width: 300px;
+        height: 300px;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        display: none;
+    }
+    .contenido-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+}
