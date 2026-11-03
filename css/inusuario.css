@@ -1,0 +1,134 @@
+.baddy {
+    background-color: rgb(224, 214, 233);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.links_navbar {
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    margin-left: auto;
+  
+}
+
+
+.profile-icon {
+  color: #ffffff;          
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ee6cff;      
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 50px 5%;
+    flex: 1;
+}
+
+.Bienvenida {
+    flex: 1;
+    min-width: 320px;
+    max-width: 550px;
+    background-color: #9b7e9c;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #8b3c92;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Bienvenida:hover {
+    transform: scale(1.02);
+}
+
+.linea-decorativa {
+    width: 50px;
+    height: 3px;
+    background-color: #2f0243;
+    margin: 15px auto;
+    border: none;
+    opacity: 1;
+}
+
+.lista-beneficios {
+    text-align: left;
+    display: inline-block;
+    margin: 20px 0;
+    line-height: 1.8;
+    color: black;
+}
+
+.section1 {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+}
+
+.carr {
+    height: 100%;
+    border: 5px solid #2f0243;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carr .carousel-inner {
+    height: 100%;
+}
+
+.carr .carousel-item img {
+    height: 480px;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    background-color: #343a40;
+    color: white;
+    padding: 15px 30px;
+}
+
+footer a {
+    color: #343a40;
+}
+
+@media (max-width: 850px) {
+    .contenido-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .Bienvenida, .section1 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carr .carousel-item img {
+        height: 350px;
+    }
+}
