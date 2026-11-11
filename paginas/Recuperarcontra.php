@@ -1,3 +1,43 @@
+
+<?php
+require_once 'conexion.php';
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $correo = $_POST['correo'];
+
+    try{
+
+        $sql = "SELECT correo FROM estudiantes WHERE correo = :correo
+                UNION
+                SELECT correo FROM administradores WHERE correo = :correo";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute([
+            'correo' => $correo
+        ]);
+
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($usuario){
+
+            $mensaje = "Si el correo está registrado, se enviarán las instrucciones para recuperar la contraseña.";
+
+        }else{
+
+            $mensaje = "Si el correo está registrado, se enviarán las instrucciones para recuperar la contraseña.";
+
+        }
+
+    }catch (PDOException $e){
+
+        $mensaje = "Error en la DB: " . $e->getMessage();
+
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,18 +76,29 @@
     <main class="container my-5 flex-grow-1">
         <h1 class="text-center fw-bold text-grafito mb-4">Recuperación de Contraseña</h1>
 
-        <form>
-            <p class="text-muted text-center mb-3">Ingresa tu correo electrónico registrado y te enviaremos las instrucciones para restablecer tu contraseña.</p>
-            
-            <label for="correoRecuperar">Correo Electrónico</label>
-            <input type="email" id="correoRecuperar" class="custom-input" placeholder="correo@ejemplo.com" required>
+        <form action="recuperacion.php" method="POST">
 
-            <button type="submit" class="submit-btn mt-4">Enviar Instrucciones</button>
-            
-            <div class="text-center mt-3">
-                <a href="./iniciodesesión.html" class="text-decoration-none small text-grafito fw-bold">Volver al Inicio de Sesión</a>
-            </div>
-        </form>
+                <p class="text-muted text-center mb-3">
+                    Ingresa tu correo electrónico registrado y te enviaremos las instrucciones para restablecer tu
+                    contraseña.
+                </p>
+
+                <label for="correoRecuperar">Correo Electrónico</label>
+
+                <input type="email" id="correoRecuperar" name="correo" class="custom-input"
+                    placeholder="correo@ejemplo.com" required>
+
+                <button type="submit" class="submit-btn mt-4">
+                    Enviar Instrucciones
+                </button>
+
+                <div class="text-center mt-3">
+                    <a href="./iniciodesesión.html" class="text-decoration-none small text-grafito fw-bold">
+                        Volver al Inicio de Sesión
+                    </a>
+                </div>
+
+            </form>
     </main>
 
     <!-- Footer -->
@@ -59,3 +110,5 @@
 </body>
 
 </html>
+
+
