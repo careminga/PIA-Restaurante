@@ -8,7 +8,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
 
-    // ID del estudiante que inició sesión
     $id_estudiante = $_SESSION['id_estudiante'];
 
     try{
@@ -32,25 +31,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Configuración Usuario</title>
-</head>
-
-<body>
-
-    <?php
-    if(isset($mensaje)){
-        echo "<p>$mensaje</p>";
-    }
-    ?>
-
-</body>
-</html>
 
 
 <!DOCTYPE html>
