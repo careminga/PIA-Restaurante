@@ -38,65 +38,45 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 }
 ?>
 
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar contraseña</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../css/recuperarcontra.css">
+    <title>Edu Food - Recuperación de Contraseña</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body>
+<body class="bg-light-purple d-flex flex-column min-vh-100">
 
-    <header class="custom-navbar">
-
-        <nav class="navbar navbar-expand-lg navbar-custom">
-            <div class="container">
-
-                <a class="navbar-brand titulo" href="#">
-                    Edu Food
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="menu">
-
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="../index.html">Inicio</a>
-                        <a class="nav-link" href="./iniciodesesión.html">
-                            Iniciar sesión
-                        </a>
-                    </div>
-
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand titulo d-flex align-items-center gap-2" href="../index.html">
+                <img src="../imagenes/plato-removebg-preview.png" alt="Logo Edu Food" style="height: 40px; width: 40px; object-fit: cover; border-radius: 50%;">
+                Edu Food
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="menu">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                    <a class="nav-link" href="./acercadenosotros.html">Acerca de nosotros</a>
                 </div>
+
             </div>
-        </nav>
+        </div>
+    </nav>
 
-    </header>
+    <!-- Contenido Principal / Formulario -->
+    <main class="container my-5 flex-grow-1">
+        <h1 class="text-center fw-bold text-grafito mb-4">Recuperación de Contraseña</h1>
 
-    <main class="contenedor-recuperar">
-
-        <div class="card-recuperar">
-
-            <h2 class="titulo-recuperar">
-                Recuperar contraseña
-            </h2>
-
-            <p class="texto-recuperar">
-                Ingresa tu correo electrónico para enviarte un enlace de recuperación.
-            </p>
-
-            <form action="recuperacion.php" method="POST">
+        <form action="recuperacion.php" method="POST">
 
                 <p class="text-muted text-center mb-3">
                     Ingresa tu correo electrónico registrado y te enviaremos las instrucciones para restablecer tu
@@ -119,30 +99,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 </div>
 
             </form>
-        </div>
-
     </main>
 
-    <footer class="custom-footer py-4">
-
-        <div class="container text-center">
-
-            <p class="mb-0 small opacity-75">
-
-                &copy; 2026 Restaurante Escolar Edu Food.
-                Todos los derechos reservados.
-
-            </p>
-
-        </div>
-
+    <!-- Footer -->
+    <footer class="custom-footer mt-auto">
+        <p class="m-0">© 2026 Restaurante Escolar Edu Food. Todos los derechos reservados.</p>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
+
