@@ -93,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 </button>
 
                 <div class="text-center mt-3">
-                    <a href="./iniciodesesión.html" class="text-decoration-none small text-grafito fw-bold">
+                    <a href="./iniciodesesion.html" class="text-decoration-none small text-grafito fw-bold">
                         Volver al Inicio de Sesión
                     </a>
                 </div>
