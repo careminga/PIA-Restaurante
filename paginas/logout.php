@@ -13,6 +13,6 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Redirigir al formulario de inicio de sesión o al index principal
-header("Location: iniciodesesion.html"); 
+header("Location: iniciodesesion.php"); 
 exit();
 ?>
