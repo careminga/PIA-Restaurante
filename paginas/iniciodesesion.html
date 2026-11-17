@@ -1,50 +1,3 @@
-<?php
-session_start();
-require_once 'conexion.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario  = trim($_POST['correo']);
-    $password = trim($_POST['contrasena']);
-
-    try {
-        // Consultar el usuario en la BD
-        $stmt = $pdo->prepare("SELECT id_usuario, nombre, rol, password FROM usuarios WHERE usuario = :usuario");
-        $stmt->execute(['usuario' => $usuario]);
-        $user = $stmt->fetch();
-
-        if ($user && password_verify($password, $user['contrasena'])) { 
-
-            // 🛡️ Prevenir ataques de fijación de sesión
-            session_regenerate_id(true);    
-
-            $_SESSION['usuario_id'] = $user['id_usuario'];
-            $_SESSION['correo']     = $user['correo'];
-            $_SESSION['rol']        = $user['rol'];
-
-            // Redirección inicial según el rol
-            switch ($_SESSION['rol']) {
-                case 'admin':
-                    header("Location: inadministrador.html");
-                    break;
-                case 'usuario':
-                    header("Location: inusuario.html");
-                    break;
-                default:
-                    header("Location: iniciodesesion.php");
-                    break;
-            }
-            exit();
-        } else {
-            $_SESSION['error'] = "Usuario o contraseña incorrectos.";
-            header("Location: login.php");
-            exit();
-        }
-    } catch (PDOException $e) {
-        die("Error en la autenticación: " . $e->getMessage());
-    }
-}
-?>
-
 
 
 <!DOCTYPE html>
@@ -88,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="main-card shadow-lg p-4">
                     <h2 class="text-center fw-bold mb-4 text-grafito">INICIO DE SESIÓN</h2>
                     
-                    <form id="loginForm" method="POST" action="iniciodesesion.html">
+                    <form id="loginForm" method="POST" action="procesar_login.php">
                         <div class="mb-3">
                             <label for="correo" class="form-label text-grafito fw-bold">Correo</label>
                             <input type="email" id="correo" class="form-control custom-input" placeholder="correo@ejemplo.com" required name="correo">
@@ -110,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button type="submit" class="submit-btn mt-3 w-100">Enviar</button>
                         
                         <div class="text-center mt-3">
-                            <a href="./Recuperarcontra.html" class="text-decoration-none small">Recuperar contraseña</a>
+                            <a href="./Recuperarcontra.php" class="text-decoration-none small">Recuperar contraseña</a>
                         </div>
                     </form>
                 </div>
