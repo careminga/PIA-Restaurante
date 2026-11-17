@@ -29,13 +29,14 @@ body.bodyinad, body.baddy {
 
 /* --- NAVEGACIÓN Y HEADERS --- */
 .custom-navbar {
-    background-color: #343a40;
+    background-color: #9871b8;
     border-bottom: 1px solid #ffffff;
     padding: 0.7rem 0;
 }
 
 .navbar {
-    background-color: #343a40;
+    background-color: #9871b8 !important;
+;
 }
 
 .navbar-brand {
@@ -130,7 +131,7 @@ body.bodyinad, body.baddy {
 }
 
 .navbar-custom .nav-link:hover {
-    color: #d8c3ff !important;
+    color: #be9cff !important;
 }
 
 /* --- HERO & HOME --- */
@@ -466,7 +467,7 @@ button:hover, .submit-btn:hover {
 }
 
 .sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(166, 122, 216, 0.1);
     color: white;
 }
 
@@ -493,7 +494,7 @@ button:hover, .submit-btn:hover {
 
 /* --- FOOTERS --- */
 footer, .custom-footer, .footer-user {
-    background-color: #343a40;
+    background-color: #9871b8;
     color: white;
     text-align: center;
     padding: 20px;
