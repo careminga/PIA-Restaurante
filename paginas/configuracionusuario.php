@@ -3,6 +3,9 @@
 session_start();
 require_once 'conexion.php';
 
+require_once 'autenticacion.php';
+requerirRol('Estudiante');
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $nombre = $_POST['nombre'];

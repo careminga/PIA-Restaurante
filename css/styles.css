@@ -11,6 +11,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
+    color: #2c2433;
     overflow-x: hidden;
 }
 
@@ -29,13 +30,13 @@ body.bodyinad, body.baddy {
 
 /* --- NAVEGACIÓN Y HEADERS --- */
 .custom-navbar {
-    background-color: #343a40;
+    background-color: #9871b8;
     border-bottom: 1px solid #ffffff;
     padding: 0.7rem 0;
 }
 
 .navbar {
-    background-color: #343a40;
+    background-color: #9871b8 !important;
 }
 
 .navbar-brand {
@@ -130,7 +131,7 @@ body.bodyinad, body.baddy {
 }
 
 .navbar-custom .nav-link:hover {
-    color: #d8c3ff !important;
+    color: #be9cff !important;
 }
 
 /* --- HERO & HOME --- */
@@ -166,7 +167,7 @@ body.bodyinad, body.baddy {
 }
 
 .text-grafito {
-    color: #343a40;
+    color: #2b2530 !important;
 }
 
 .plate-img {
@@ -226,6 +227,7 @@ body.bodyinad, body.baddy {
   padding: 35px;
   height: 100%;
   box-shadow: 0 10px 25px rgba(0,0,0,.05);
+  color: #2b2530;
 }
 
 .main-image {
@@ -255,8 +257,72 @@ body.bodyinad, body.baddy {
   border-radius: 20px;
 }
 
+/* --- PESTAÑAS TIPO NAVEGADOR (PLATOS / REFRIGERIOS) --- */
+#adminTabs.nav-tabs {
+    border-bottom: 2px solid #765185;
+    gap: 8px;
+}
+
+#adminTabs .nav-link {
+    width: auto !important;
+    margin-top: 0 !important;
+    background-color: #ede4f5 !important;
+    color: #4a2c5a !important;
+    border: 1px solid #c9b2dc !important;
+    border-bottom: none !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+#adminTabs .nav-link:hover {
+    background-color: #dccbe9 !important;
+    color: #2c1538 !important;
+}
+
+#adminTabs .nav-link.active {
+    background-color: #765185 !important;
+    color: #ffffff !important;
+    border-color: #765185 !important;
+    font-weight: 700;
+    box-shadow: 0 -2px 8px rgba(118, 81, 133, 0.2);
+}
+
+/* Evitar que el estilo de formulario de login rompa las tablas de edición */
+table form {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border-top: none !important;
+}
+
+table input,
+table select,
+table .form-control,
+table .form-select {
+    margin-top: 0 !important;
+    color: #212529 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #b5a3c4 !important;
+}
+
+table button,
+table .btn {
+    width: auto !important;
+    margin-top: 0 !important;
+    padding: 6px 12px !important;
+    font-size: 0.85rem !important;
+}
+
 /* --- FORMULARIOS Y LOGIN (CON BORDES APLICADOS) --- */
-form {
+main > .main-card form,
+form#loginForm {
     width: 90%;
     max-width: 450px;
     margin: 40px auto;
@@ -271,6 +337,7 @@ form label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
+    color: #2b2530;
 }
 
 form input,
@@ -279,17 +346,18 @@ form select,
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 2px solid #bda8c4 !important; /* Borde visible y elegante en todos los inputs */
+    border: 2px solid #bda8c4 !important;
     border-radius: 6px;
     outline: none;
     background: #faf9ff;
+    color: #212529;
     transition: border-color 0.3s ease;
 }
 
 form input:focus,
 form select:focus,
 .custom-input:focus {
-    border-color: #704385 !important; /* Se oscurece al hacerles clic/enfoque */
+    border-color: #704385 !important;
     box-shadow: 0 0 5px rgba(112, 67, 133, 0.3);
 }
 
@@ -466,7 +534,7 @@ button:hover, .submit-btn:hover {
 }
 
 .sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(166, 122, 216, 0.1);
     color: white;
 }
 
@@ -493,7 +561,7 @@ button:hover, .submit-btn:hover {
 
 /* --- FOOTERS --- */
 footer, .custom-footer, .footer-user {
-    background-color: #343a40;
+    background-color: #9871b8;
     color: white;
     text-align: center;
     padding: 20px;
