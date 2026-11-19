@@ -162,9 +162,8 @@ $imgDefecto = "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="navbar-nav ms-auto links-navinad align-items-center gap-3">
-                        <a class="nav-link text-white" href="./inicioadmin.php">Inicio</a>
-                        <a class="nav-link text-white active" href="./paginadeplatosadmin.php">Platos</a>
-                        <a class="nav-link text-white" href="./listausuarios.html">lista de usuarios</a>
+                        <a class="nav-link text-white" href="./inadministrador.html">Inicio</a>
+                        <a class="nav-link text-white" href="./listausuarios.php">lista de usuarios</a>
                         <a class="nav-link text-white" href="./acercadenosotrosadmin.html">Acerca de nosotros</a>
                         <a href="./configuracionadmin.php" class="profile-icon text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"

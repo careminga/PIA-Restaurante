@@ -34,7 +34,7 @@ $imagenesRefrigerio = [
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="links_navbar ms-auto d-flex align-items-center gap-3">
-                        <a class="nav-link text-white" href="./iniciousuario.php">Inicio</a>
+                        <a class="nav-link text-white" href="./inusuario.html">Inicio</a>
                         <a class="nav-link text-white" href="./paginadeplatosusuario.php">Platos</a>
                         <a class="nav-link text-white" href="./acercadenosotrosusuario.html">Acerca de nosotros</a>
                         <a href="./configuracionusuario.php" class="profile-icon text-white">
