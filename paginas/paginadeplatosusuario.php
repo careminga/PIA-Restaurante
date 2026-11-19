@@ -2,7 +2,7 @@
 session_start();
 require_once 'conexion.php';
 
-$stmt = $pdo->query("SELECT id_plato, nombre_plato, descripcion, calorias, proteina, grasas 
+$stmt = $pdo->query("SELECT id_plato, nombre_plato, descripcion, calorias, proteina, grasas, imagen 
                       FROM platos 
                       WHERE estado = 1 
                       ORDER BY id_plato ASC");
@@ -39,7 +39,7 @@ $imagenesFallback = [
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="links_navbar ms-auto d-flex align-items-center gap-3">
                         <a class="nav-link text-white" href="./iniciousuario.php">Inicio</a>
-                        <a class="nav-link text-white" href="./refrigeriousuario.html">Refrigerios</a>
+                        <a class="nav-link text-white" href="./refrigeriousuario.php">Refrigerios</a>
                         <a class="nav-link text-white" href="./acercadenosotrosusuario.html">Acerca de nosotros</a>
                         <a href="./configuracionusuario.php" class="profile-icon text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
@@ -64,7 +64,7 @@ $imagenesFallback = [
         <div class="row g-4 justify-content-center">
             <?php if (count($platos) > 0): ?>
                 <?php foreach ($platos as $index => $plato): ?>
-                    <?php $imgSrc = $imagenesFallback[$index % count($imagenesFallback)]; ?>
+                    <?php $imgSrc = !empty($plato['imagen']) ? $plato['imagen'] : $imagenesFallback[$index % count($imagenesFallback)]; ?>
                     <div class="col-md-5 col-lg-4">
                         <div class="food-card shadow-sm h-100 p-4">
                             <img src="<?= htmlspecialchars($imgSrc) ?>" alt="<?= htmlspecialchars($plato['nombre_plato']) ?>" class="mb-3 rounded w-100" style="height: 200px; object-fit: cover;">
