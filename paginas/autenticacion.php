@@ -35,11 +35,11 @@ function requerirRol($rolEsperado) {
         $_SESSION['error'] = "No tienes permisos para acceder.";
 
         if (in_array($rolUsuario, $rolesAdmin)) {
-            header("Location: inadministrador.php");
+            header("Location: inadministrador.html");
         } elseif (in_array($rolUsuario, $rolesEstudiante)) {
-            header("Location: inusuario.php");
+            header("Location: inusuario.html");
         } else {
-            header("Location: iniciodesesion.html");
+            header("Location: iniciodesesion.php");
         }
 
         exit();
