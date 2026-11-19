@@ -6,6 +6,27 @@ $mensaje = "";
 $error = "";
 $pestanaActiva = "platos";
 
+// Función auxiliar para guardar imagen en ../imagenes/
+function subirImagen($archivoInput) {
+    if (!isset($archivoInput) || $archivoInput['error'] !== UPLOAD_ERR_OK) {
+        return null;
+    }
+    $permitidos = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+    if (!in_array($archivoInput['type'], $permitidos)) {
+        return false;
+    }
+    $carpetaDestino = __DIR__ . '/../imagenes/';
+    if (!is_dir($carpetaDestino)) {
+        mkdir($carpetaDestino, 0777, true);
+    }
+    $extension = pathinfo($archivoInput['name'], PATHINFO_EXTENSION);
+    $nombreArchivo = uniqid('menu_', true) . '.' . strtolower($extension);
+    if (move_uploaded_file($archivoInput['tmp_name'], $carpetaDestino . $nombreArchivo)) {
+        return '../imagenes/' . $nombreArchivo;
+    }
+    return false;
+}
+
 // 1. AGREGAR NUEVO PLATO O REFRIGERIO
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['accion'] === 'agregar') {
     $nombre      = trim($_POST['nombre_plato'] ?? '');
@@ -14,23 +35,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
     $calorias    = floatval($_POST['calorias'] ?? 0);
     $proteina    = floatval($_POST['proteina'] ?? 0);
     $grasas      = intval($_POST['grasas'] ?? 0);
+    $rutaImagen  = subirImagen($_FILES['imagen'] ?? null);
 
-    if ($nombre === '' || $descripcion === '') {
+    if ($rutaImagen === false) {
+        $error = "Formato de imagen no válido (usa JPG, PNG, WEBP o GIF).";
+    } elseif ($nombre === '' || $descripcion === '') {
         $error = "Completa el nombre y la descripción.";
     } elseif ($categoria === '2') {
-        $stmt = $pdo->prepare("INSERT INTO registros_refrigerios (nombre_refrigerio, descripcion, calorias, proteina, grasas) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$nombre, $descripcion, $calorias, $proteina, $grasas]);
-        $mensaje = "Refrigerio agregado correctamente a la base de datos.";
+        $stmt = $pdo->prepare("INSERT INTO registros_refrigerios (nombre_refrigerio, descripcion, calorias, proteina, grasas, imagen) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$nombre, $descripcion, $calorias, $proteina, $grasas, $rutaImagen]);
+        $mensaje = "Refrigerio agregado correctamente.";
         $pestanaActiva = "refrigerios";
     } else {
-        $stmt = $pdo->prepare("INSERT INTO platos (nombre_plato, descripcion, estado, calorias, proteina, grasas) VALUES (?, ?, 1, ?, ?, ?)");
-        $stmt->execute([$nombre, $descripcion, $calorias, $proteina, $grasas]);
-        $mensaje = "Plato principal agregado correctamente a la base de datos.";
+        $stmt = $pdo->prepare("INSERT INTO platos (nombre_plato, descripcion, estado, calorias, proteina, grasas, imagen) VALUES (?, ?, 1, ?, ?, ?, ?)");
+        $stmt->execute([$nombre, $descripcion, $calorias, $proteina, $grasas, $rutaImagen]);
+        $mensaje = "Plato principal agregado correctamente.";
         $pestanaActiva = "platos";
     }
 }
 
-// 2. MODIFICAR PLATO EXISTENTE
+// 2. MODIFICAR PLATO EXISTENTE (INCLUYE CAMBIO DE IMAGEN)
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['accion'] === 'editar_plato') {
     $id_plato    = intval($_POST['id_plato'] ?? 0);
     $nombre      = trim($_POST['nombre_plato'] ?? '');
@@ -39,20 +63,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
     $proteina    = floatval($_POST['proteina'] ?? 0);
     $grasas      = intval($_POST['grasas'] ?? 0);
     $estado      = isset($_POST['estado']) ? intval($_POST['estado']) : 1;
+    $nuevaImagen = subirImagen($_FILES['imagen'] ?? null);
     $pestanaActiva = "platos";
 
-    if ($id_plato > 0 && $nombre !== '' && $descripcion !== '') {
-        $stmt = $pdo->prepare("UPDATE platos 
-                               SET nombre_plato = ?, descripcion = ?, calorias = ?, proteina = ?, grasas = ?, estado = ? 
-                               WHERE id_plato = ?");
-        $stmt->execute([$nombre, $descripcion, $calorias, $proteina, $grasas, $estado, $id_plato]);
-        $mensaje = "Plato #$id_plato actualizado en la base de datos.";
+    if ($nuevaImagen === false) {
+        $error = "Formato de imagen no válido al editar el plato #$id_plato.";
+    } elseif ($id_plato > 0 && $nombre !== '' && $descripcion !== '') {
+        if ($nuevaImagen !== null) {
+            $stmt = $pdo->prepare("UPDATE platos 
+                                   SET nombre_plato = ?, descripcion = ?, calorias = ?, proteina = ?, grasas = ?, estado = ?, imagen = ? 
+                                   WHERE id_plato = ?");
+            $stmt->execute([$nombre, $descripcion, $calorias, $proteina, $grasas, $estado, $nuevaImagen, $id_plato]);
+        } else {
+            $stmt = $pdo->prepare("UPDATE platos 
+                                   SET nombre_plato = ?, descripcion = ?, calorias = ?, proteina = ?, grasas = ?, estado = ? 
+                                   WHERE id_plato = ?");
+            $stmt->execute([$nombre, $descripcion, $calorias, $proteina, $grasas, $estado, $id_plato]);
+        }
+        $mensaje = "Plato #$id_plato actualizado correctamente.";
     } else {
         $error = "Datos inválidos al intentar modificar el plato.";
     }
 }
 
-// 3. MODIFICAR REFRIGERIO EXISTENTE
+// 3. MODIFICAR REFRIGERIO EXISTENTE (INCLUYE CAMBIO DE IMAGEN)
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['accion'] === 'editar_refrigerio') {
     $id_refrigerio     = intval($_POST['id_refrigerio'] ?? 0);
     $nombre_refrigerio = trim($_POST['nombre_refrigerio'] ?? '');
@@ -60,22 +94,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
     $calorias          = floatval($_POST['calorias'] ?? 0);
     $proteina          = floatval($_POST['proteina'] ?? 0);
     $grasas            = intval($_POST['grasas'] ?? 0);
+    $nuevaImagen       = subirImagen($_FILES['imagen'] ?? null);
     $pestanaActiva     = "refrigerios";
 
-    if ($id_refrigerio > 0 && $nombre_refrigerio !== '' && $descripcion !== '') {
-        $stmt = $pdo->prepare("UPDATE registros_refrigerios 
-                               SET nombre_refrigerio = ?, descripcion = ?, calorias = ?, proteina = ?, grasas = ? 
-                               WHERE id_refrigerio = ?");
-        $stmt->execute([$nombre_refrigerio, $descripcion, $calorias, $proteina, $grasas, $id_refrigerio]);
-        $mensaje = "Refrigerio #$id_refrigerio actualizado en la base de datos.";
+    if ($nuevaImagen === false) {
+        $error = "Formato de imagen no válido al editar el refrigerio #$id_refrigerio.";
+    } elseif ($id_refrigerio > 0 && $nombre_refrigerio !== '' && $descripcion !== '') {
+        if ($nuevaImagen !== null) {
+            $stmt = $pdo->prepare("UPDATE registros_refrigerios 
+                                   SET nombre_refrigerio = ?, descripcion = ?, calorias = ?, proteina = ?, grasas = ?, imagen = ? 
+                                   WHERE id_refrigerio = ?");
+            $stmt->execute([$nombre_refrigerio, $descripcion, $calorias, $proteina, $grasas, $nuevaImagen, $id_refrigerio]);
+        } else {
+            $stmt = $pdo->prepare("UPDATE registros_refrigerios 
+                                   SET nombre_refrigerio = ?, descripcion = ?, calorias = ?, proteina = ?, grasas = ? 
+                                   WHERE id_refrigerio = ?");
+            $stmt->execute([$nombre_refrigerio, $descripcion, $calorias, $proteina, $grasas, $id_refrigerio]);
+        }
+        $mensaje = "Refrigerio #$id_refrigerio actualizado correctamente.";
     } else {
         $error = "Datos inválidos al intentar modificar el refrigerio.";
     }
 }
 
-// Consultar platos y refrigerios actuales
 $listaPlatos = $pdo->query("SELECT * FROM platos ORDER BY id_plato DESC")->fetchAll(PDO::FETCH_ASSOC);
 $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id_refrigerio DESC")->fetchAll(PDO::FETCH_ASSOC);
+$imgDefecto = "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=300&q=80";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -88,7 +132,7 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
     <link rel="stylesheet" href="../css/styles.css">
     <style>
         .plate-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .preview-img {
@@ -96,6 +140,13 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
             height: 140px;
             object-fit: cover;
             border-radius: 0.5rem;
+        }
+        .thumb-tabla {
+            width: 60px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
@@ -141,12 +192,12 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
 
             <div class="mb-4">
                 <h2 class="fw-bold text-grafito m-0">Añadir Nuevo Plato o Refrigerio</h2>
-                <p class="text-muted small mt-1">Registra un nuevo plato o refrigerio saludable para el menú escolar.</p>
+                <p class="text-muted small mt-1">Registra un nuevo plato o refrigerio saludable con su fotografía.</p>
             </div>
 
             <div class="row g-4 align-items-center">
                 <div class="col-md-6">
-                    <form method="POST" action="paginadeplatosadmin.php">
+                    <form method="POST" action="paginadeplatosadmin.php" enctype="multipart/form-data">
                         <input type="hidden" name="accion" value="agregar">
                         <div class="row g-3 mb-3">
                             <div class="col-6">
@@ -167,7 +218,7 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
                             <textarea name="descripcion" class="form-control custom-input" rows="3" placeholder="Describe el plato o refrigerio..." required></textarea>
                         </div>
 
-                        <div class="row g-2 mb-4">
+                        <div class="row g-2 mb-3">
                             <div class="col-4">
                                 <label class="form-label text-grafito fw-bold small">Calorías</label>
                                 <input type="number" step="0.1" name="calorias" class="form-control custom-input" placeholder="320" required>
@@ -180,6 +231,11 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
                                 <label class="form-label text-grafito fw-bold small">Grasas (g)</label>
                                 <input type="number" name="grasas" class="form-control custom-input" placeholder="10" required>
                             </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label text-grafito fw-bold small">Imagen</label>
+                            <input type="file" name="imagen" accept="image/*" class="form-control custom-input">
                         </div>
 
                         <button type="submit" class="submit-btn">Guardar Registro</button>
@@ -213,10 +269,10 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
             </div>
         </div>
 
-        <!-- PESTAÑAS TIPO NAVEGADOR PARA MODIFICAR PLATOS Y REFRIGERIOS -->
+        <!-- PESTAÑAS PARA MODIFICAR PLATOS Y REFRIGERIOS -->
         <div class="main-card p-4 p-md-5 plate-container">
             <h3 class="fw-bold text-grafito mb-3">Modificar Registros</h3>
-            <p class="text-muted small mb-4">Cambia de pestaña para editar <strong>Platos</strong> o <strong>Refrigerios</strong> y pulsa <strong>Guardar cambios</strong>.</p>
+            <p class="text-muted small mb-4">Cambia de pestaña para editar <strong>Platos</strong> o <strong>Refrigerios</strong>, selecciona una nueva imagen si deseas reemplazarla y pulsa <strong>Guardar cambios</strong>.</p>
 
             <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -225,9 +281,7 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
                             data-bs-toggle="tab"
                             data-bs-target="#panel-platos"
                             type="button"
-                            role="tab"
-                            aria-controls="panel-platos"
-                            aria-selected="<?= $pestanaActiva === 'platos' ? 'true' : 'false' ?>">
+                            role="tab">
                         Platos (<?= count($listaPlatos) ?>)
                     </button>
                 </li>
@@ -237,9 +291,7 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
                             data-bs-toggle="tab"
                             data-bs-target="#panel-refrigerios"
                             type="button"
-                            role="tab"
-                            aria-controls="panel-refrigerios"
-                            aria-selected="<?= $pestanaActiva === 'refrigerios' ? 'true' : 'false' ?>">
+                            role="tab">
                         Refrigerios (<?= count($listaRefrigerios) ?>)
                     </button>
                 </li>
@@ -247,54 +299,59 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
 
             <div class="tab-content" id="adminTabsContent">
                 <!-- PESTAÑA 1: PLATOS -->
-                <div class="tab-pane fade <?= $pestanaActiva === 'platos' ? 'show active' : '' ?>"
-                     id="panel-platos"
-                     role="tabpanel"
-                     aria-labelledby="tab-platos">
+                <div class="tab-pane fade <?= $pestanaActiva === 'platos' ? 'show active' : '' ?>" id="panel-platos" role="tabpanel">
                     <div class="table-responsive">
                         <table class="table table-bordered align-middle bg-white">
                             <thead class="table-light">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombre del plato</th>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
                                     <th>Descripción</th>
                                     <th>Kcal</th>
-                                    <th>Prot (g)</th>
-                                    <th>Grasas (g)</th>
+                                    <th>Prot</th>
+                                    <th>Grasas</th>
                                     <th>Visible</th>
                                     <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($listaPlatos as $plato): ?>
+                                    <?php $fotoActual = !empty($plato['imagen']) ? $plato['imagen'] : $imgDefecto; ?>
                                     <tr>
-                                        <form method="POST" action="paginadeplatosadmin.php">
+                                        <form method="POST" action="paginadeplatosadmin.php" enctype="multipart/form-data">
                                             <input type="hidden" name="accion" value="editar_plato">
                                             <input type="hidden" name="id_plato" value="<?= (int)$plato['id_plato'] ?>">
                                             <td><?= (int)$plato['id_plato'] ?></td>
+                                            <td style="width: 170px;">
+                                                <div class="d-flex flex-column align-items-center gap-1">
+                                                    <img src="<?= htmlspecialchars($fotoActual) ?>" alt="Vista previa" class="thumb-tabla">
+                                                    <input type="file" name="imagen" accept="image/*" class="form-control form-control-sm">
+                                                </div>
+                                            </td>
                                             <td>
                                                 <input type="text" name="nombre_plato" class="form-control form-control-sm" value="<?= htmlspecialchars($plato['nombre_plato']) ?>" required>
                                             </td>
                                             <td>
                                                 <input type="text" name="descripcion" class="form-control form-control-sm" value="<?= htmlspecialchars($plato['descripcion']) ?>" required>
                                             </td>
-                                            <td style="width: 90px;">
+                                            <td style="width: 80px;">
                                                 <input type="number" step="0.1" name="calorias" class="form-control form-control-sm" value="<?= htmlspecialchars($plato['calorias']) ?>" required>
                                             </td>
-                                            <td style="width: 85px;">
+                                            <td style="width: 75px;">
                                                 <input type="number" step="0.1" name="proteina" class="form-control form-control-sm" value="<?= htmlspecialchars($plato['proteina']) ?>" required>
                                             </td>
-                                            <td style="width: 85px;">
+                                            <td style="width: 75px;">
                                                 <input type="number" name="grasas" class="form-control form-control-sm" value="<?= htmlspecialchars($plato['grasas']) ?>" required>
                                             </td>
-                                            <td style="width: 95px;">
+                                            <td style="width: 85px;">
                                                 <select name="estado" class="form-select form-select-sm">
                                                     <option value="1" <?= (int)$plato['estado'] === 1 ? 'selected' : '' ?>>Sí</option>
                                                     <option value="0" <?= (int)$plato['estado'] === 0 ? 'selected' : '' ?>>No</option>
                                                 </select>
                                             </td>
                                             <td>
-                                                <button type="submit" class="btn btn-sm btn-primary">Guardar cambios</button>
+                                                <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
                                             </td>
                                         </form>
                                     </tr>
@@ -305,47 +362,52 @@ $listaRefrigerios = $pdo->query("SELECT * FROM registros_refrigerios ORDER BY id
                 </div>
 
                 <!-- PESTAÑA 2: REFRIGERIOS -->
-                <div class="tab-pane fade <?= $pestanaActiva === 'refrigerios' ? 'show active' : '' ?>"
-                     id="panel-refrigerios"
-                     role="tabpanel"
-                     aria-labelledby="tab-refrigerios">
+                <div class="tab-pane fade <?= $pestanaActiva === 'refrigerios' ? 'show active' : '' ?>" id="panel-refrigerios" role="tabpanel">
                     <div class="table-responsive">
                         <table class="table table-bordered align-middle bg-white">
                             <thead class="table-light">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombre del refrigerio</th>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
                                     <th>Descripción</th>
                                     <th>Kcal</th>
-                                    <th>Prot (g)</th>
-                                    <th>Grasas (g)</th>
+                                    <th>Prot</th>
+                                    <th>Grasas</th>
                                     <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($listaRefrigerios as $ref): ?>
+                                    <?php $fotoActualRef = !empty($ref['imagen']) ? $ref['imagen'] : $imgDefecto; ?>
                                     <tr>
-                                        <form method="POST" action="paginadeplatosadmin.php">
+                                        <form method="POST" action="paginadeplatosadmin.php" enctype="multipart/form-data">
                                             <input type="hidden" name="accion" value="editar_refrigerio">
                                             <input type="hidden" name="id_refrigerio" value="<?= (int)$ref['id_refrigerio'] ?>">
                                             <td><?= (int)$ref['id_refrigerio'] ?></td>
+                                            <td style="width: 170px;">
+                                                <div class="d-flex flex-column align-items-center gap-1">
+                                                    <img src="<?= htmlspecialchars($fotoActualRef) ?>" alt="Vista previa" class="thumb-tabla">
+                                                    <input type="file" name="imagen" accept="image/*" class="form-control form-control-sm">
+                                                </div>
+                                            </td>
                                             <td>
                                                 <input type="text" name="nombre_refrigerio" class="form-control form-control-sm" value="<?= htmlspecialchars($ref['nombre_refrigerio']) ?>" required>
                                             </td>
                                             <td>
                                                 <input type="text" name="descripcion" class="form-control form-control-sm" value="<?= htmlspecialchars($ref['descripcion']) ?>" required>
                                             </td>
-                                            <td style="width: 90px;">
+                                            <td style="width: 80px;">
                                                 <input type="number" step="0.1" name="calorias" class="form-control form-control-sm" value="<?= htmlspecialchars($ref['calorias']) ?>" required>
                                             </td>
-                                            <td style="width: 85px;">
+                                            <td style="width: 75px;">
                                                 <input type="number" step="0.1" name="proteina" class="form-control form-control-sm" value="<?= htmlspecialchars($ref['proteina']) ?>" required>
                                             </td>
-                                            <td style="width: 85px;">
+                                            <td style="width: 75px;">
                                                 <input type="number" name="grasas" class="form-control form-control-sm" value="<?= htmlspecialchars($ref['grasas']) ?>" required>
                                             </td>
                                             <td>
-                                                <button type="submit" class="btn btn-sm btn-primary">Guardar cambios</button>
+                                                <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
                                             </td>
                                         </form>
                                     </tr>

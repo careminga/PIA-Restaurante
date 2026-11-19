@@ -2,7 +2,7 @@
 session_start();
 require_once 'conexion.php';
 
-$stmt = $pdo->query("SELECT id_refrigerio, nombre_refrigerio, descripcion, calorias, proteina, grasas 
+$stmt = $pdo->query("SELECT id_refrigerio, nombre_refrigerio, descripcion, calorias, proteina, grasas, imagen 
                       FROM registros_refrigerios 
                       ORDER BY id_refrigerio ASC");
 $refrigerios = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -60,7 +60,7 @@ $imagenesRefrigerio = [
         <div class="row g-4 justify-content-center">
             <?php if (count($refrigerios) > 0): ?>
                 <?php foreach ($refrigerios as $index => $ref): ?>
-                    <?php $imgSrc = $imagenesRefrigerio[$index % count($imagenesRefrigerio)]; ?>
+                    <?php $imgSrc = !empty($ref['imagen']) ? $ref['imagen'] : $imagenesRefrigerio[$index % count($imagenesRefrigerio)]; ?>
                     <div class="col-md-6 col-lg-4">
                         <div class="food-card shadow-sm h-100 p-4">
                             <img src="<?= htmlspecialchars($imgSrc) ?>" alt="<?= htmlspecialchars($ref['nombre_refrigerio']) ?>" class="mb-3 rounded w-100" style="height: 200px; object-fit: cover;">
