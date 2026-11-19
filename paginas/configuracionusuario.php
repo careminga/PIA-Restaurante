@@ -1,41 +1,63 @@
-
 <?php
 session_start();
 require_once 'conexion.php';
 
-require_once 'autenticacion.php';
-requerirRol('Estudiante');
+if (file_exists('autenticacion.php')) {
+    require_once 'autenticacion.php';
+}
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
+// Verificar que haya sesión iniciada
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: iniciodesesion.html");
+    exit();
+}
 
-    $id_estudiante = $_SESSION['id_estudiante'];
-
-    try{
-
-        $sql = "UPDATE estudiantes SET nombre = :nombre, apellido = :apellido WHERE id_estudiante = :id_estudiante";
-
-        $stmt = $pdo->prepare($sql);
-
-        $stmt->execute([
-            'nombre' => $nombre,
-            'apellido' => $apellido,
-            'id_estudiante' => $id_estudiante
-        ]);
-
-        $mensaje = "Datos actualizados correctamente";
-
-    }catch (PDOException $e){
-
-        $mensaje = "Error en la DB: " . $e->getMessage();
-
+// Si existe requerirRol y el usuario no es Estudiante ni cliente, redirigir según corresponda
+$rolActual = $_SESSION['rol'] ?? '';
+if (function_exists('requerirRol')) {
+    if (!in_array($rolActual, ['Estudiante', 'cliente'], true)) {
+        header("Location: inicioadmin.php");
+        exit();
     }
 }
+
+$mensaje = "";
+$error = "";
+$usuario_id = (int)$_SESSION['usuario_id'];
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nombre   = trim($_POST['nombre'] ?? '');
+    $apellido = trim($_POST['apellido'] ?? '');
+
+    if ($nombre === '' || $apellido === '') {
+        $error = "El nombre y el apellido no pueden estar vacíos.";
+    } else {
+        try {
+            $sql = "UPDATE usuarios SET nombre = :nombre, apellido = :apellido WHERE id_usuario = :id_usuario";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                'nombre'     => $nombre,
+                'apellido'   => $apellido,
+                'id_usuario' => $usuario_id
+            ]);
+
+            $_SESSION['nombre'] = $nombre;
+            $mensaje = "Datos actualizados correctamente.";
+        } catch (PDOException $e) {
+            $error = "Error en la DB: " . $e->getMessage();
+        }
+    }
+}
+
+// Obtener datos actuales del usuario
+$stmtUser = $pdo->prepare("SELECT nombre, apellido, numero_documento, categoria FROM usuarios WHERE id_usuario = :id_usuario");
+$stmtUser->execute(['id_usuario' => $usuario_id]);
+$usuario = $stmtUser->fetch(PDO::FETCH_ASSOC);
+
+$nombreMostrar   = $usuario['nombre'] ?? ($_SESSION['nombre'] ?? 'Usuario');
+$apellidoMostrar = $usuario['apellido'] ?? '';
+$docMostrar      = $usuario['numero_documento'] ?? '';
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -56,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </header>
         <nav class="sidebar-nav">
             <a href="inusuario.html" class="nav-link"><i class="bi bi-house-door"></i> Inicio</a>
-            <a href="configuracionusuario.html" class="nav-link active"><i class="bi bi-person-gear"></i> Mi Perfil</a>
+            <a href="configuracionusuario.php" class="nav-link active"><i class="bi bi-person-gear"></i> Mi Perfil</a>
             <a href="../index.html" class="nav-link logout mt-auto"><i class="bi bi-box-arrow-left"></i> Salir</a>
         </nav>
     </aside>
@@ -68,19 +90,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <section class="container-fluid p-4">
             <div class="row justify-content-center">
                 <div class="col-12 col-xl-10">
+                    <?php if ($mensaje): ?>
+                        <div class="alert alert-success"><?= htmlspecialchars($mensaje) ?></div>
+                    <?php endif; ?>
+                    <?php if ($error): ?>
+                        <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+                    <?php endif; ?>
+
                     <div class="row g-4">
                         <aside class="col-12 col-lg-4">
                             <article class="card border-0 shadow-sm rounded-4 p-4 text-center h-100">
                                 <div class="position-relative d-inline-block mx-auto mb-3">
-                                    <img src="usu.jpg" alt="Foto de perfil"
+                                    <img src="../imagenes/usu.jpg" alt="Foto de perfil"
                                         class="rounded-circle img-thumbnail shadow-sm"
                                         style="width: 150px; height: 150px; object-fit: cover;">
                                     <label for="file-input" class="btn-edit-img shadow"><i
                                             class="bi bi-pencil-fill"></i></label>
                                     <input id="file-input" type="file" hidden />
                                 </div>
-                                <h5 class="fw-bold text-grafito mb-1">Juanito Felipe Pérez</h5>
-                                <p class="text-muted small">ID: EST-2026-04</p>
+                                <h5 class="fw-bold text-grafito mb-1"><?= htmlspecialchars($nombreMostrar . ' ' . $apellidoMostrar) ?></h5>
+                                <p class="text-muted small">Doc: <?= htmlspecialchars($docMostrar) ?></p>
                             </article>
                         </aside>
                         <article class="col-12 col-lg-8">
@@ -89,12 +118,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                                 <form action="configuracionusuario.php" method="POST">
                                     <div class="col-md-6">
                                         <label class="form-label small fw-bold">Nombre</label>
-                                        <input type="text" name="nombre" class="form-control" value="Juanito">
+                                        <input type="text" name="nombre" class="form-control" value="<?= htmlspecialchars($nombreMostrar) ?>" required>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label class="form-label small fw-bold">Apellido</label>
-                                        <input type="text" name="apellido" class="form-control" value="Pérez">
+                                        <input type="text" name="apellido" class="form-control" value="<?= htmlspecialchars($apellidoMostrar) ?>" required>
                                     </div>
 
                                     <div class="col-12 text-end mt-4">

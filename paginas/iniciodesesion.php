@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             $_SESSION['error'] = "Correo o contraseña incorrectos.";
-            header("Location: iniciodesesion.html");
+            header("Location: iniciodesesion.php");
             exit();
         }
     } catch (PDOException $e) {
